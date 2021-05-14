@@ -1,0 +1,36 @@
+.affiliate {
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+  span {
+    background: #00feca;
+    color: #121212;
+  }
+  .picture {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    img {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #00feca;
+      border-radius: 50%;
+    }
+  }
+  .cta {
+    display: flex;
+    justify-content: center;
+    button {
+      border: none;
+      border-radius: 5px;
+      padding: 6px 12px;
+      font-size: 16px;
+      outline: none;
+      background: #00feca;
+      cursor: pointer;
+      &:hover {
+        background: #05bb97;
+      }
+    }
+  }
+}

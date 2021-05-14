@@ -1,0 +1,33 @@
+.choice {
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 70%;
+  }
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+  .title {
+    margin-bottom: 30px;
+  }
+  .car_types {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    &> div {
+      flex: 50%;
+      cursor: pointer;
+      height: 254px;
+    }
+  }
+}

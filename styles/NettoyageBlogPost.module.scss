@@ -1,0 +1,65 @@
+.nettoyage {
+  color: #fff;
+  .cta_bottom {
+    text-align: center;
+  }
+  button {
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    background: #00FECA;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px 0;
+    &:hover {
+      background: #00fecbc9;
+    }
+    @media (min-width: 1024px) {
+      font-size: 26px;
+    }
+  }
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/paris.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title {
+      padding: 20px;
+      text-align: center;
+      h1, h2 {
+        margin-top: 0;
+      }
+      h2 {
+        font-weight: 300;
+      }
+    }
+  }
+  .post {
+    margin: 0 auto;
+    width: 95%;
+    picture {
+      display: flex;
+      justify-content: center;
+    }
+    @media (min-width: 1024px) {
+      width: 75%;
+    }
+    @media (min-width: 1440px) {
+      width: 65%;
+    }
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 18px;
+    }
+  }
+}

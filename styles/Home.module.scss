@@ -1,0 +1,181 @@
+.home {
+	&_hero {
+		margin: 0 auto;
+		width: 90%;
+		@media (min-width: 768px) {
+			width: 100%;
+		}
+		&_mobile {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			@media (min-width: 768px) {
+				display: none;
+			}
+			.logo {
+				text-align: center;
+			}
+			.services {
+				color: #fff;
+				width: 100%;
+				height: 150px;
+				border-radius: 10px;
+				padding: 3px 6px;
+				margin-bottom: 10px;
+				border-left: 1px solid rgba(255, 255, 255, 0.034);
+				border-right: 1px solid rgba(255, 255, 255, 0.034);
+				h1,
+				h2 {
+					font-size: 24px;
+				}
+			}
+			.clean {
+				background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				height: 100%;
+				z-index: 1;
+				padding: 0;
+				div {
+					z-index: -10;
+					width: 100%;
+					height: 150px;
+					border-radius: 10px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+				position: relative;
+				h1 {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+					margin: 0;
+					height: 100%;
+					padding: 3px 6px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+			}
+			.no_dent {
+				background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				height: 100%;
+				z-index: 1;
+				padding: 0;
+				div {
+					z-index: -10;
+					width: 100%;
+					height: 150px;
+					border-radius: 10px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+				position: relative;
+				h2 {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+					margin: 0;
+					height: 100%;
+					padding: 3px 6px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+			}
+
+			.phares {
+				background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				height: 100%;
+				z-index: 1;
+				padding: 0;
+				div {
+					z-index: -10;
+					width: 100%;
+					height: 150px;
+					border-radius: 10px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+				position: relative;
+				h2 {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+					margin: 0;
+					height: 100%;
+					padding: 3px 6px;
+					background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4));
+				}
+			}
+		}
+		&_desktop {
+			@media (max-width: 767px) {
+				display: none;
+				margin-top: 12vh;
+			}
+			color: #fff;
+			.clean {
+				background: linear-gradient(to right, #121212, hsla(0, 0%, 7%, 0.4)),
+					url('/images/car_interior_tiny.jpeg') center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: 60vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 30px;
+				h1 {
+					font-size: 50px;
+					text-align: center;
+					margin: 0 auto;
+					width: 80%;
+				}
+				button {
+					cursor: pointer;
+					margin-top: 30px;
+					font-size: 20px;
+					outline: none;
+					color: #121212;
+					background-color: #00feca;
+					padding: 6px 12px;
+					border: none;
+					border-radius: 4px;
+				}
+			}
+			.ohter_services {
+				margin: 0 auto;
+				width: 70%;
+				display: flex;
+				justify-content: space-around;
+				align-items: bascentereline;
+				.picture_no_dent,
+				.picture_phares {
+					width: 100%;
+					flex: 0 0 50%;
+					height: 100%;
+					div {
+						height: 300px;
+					}
+				}
+				.content {
+					padding: 0 20px;
+					display: flex;
+					flex-direction: column;
+					button {
+						cursor: pointer;
+						padding: 6px 12px;
+						font-size: 20px;
+						background: #00feca;
+						align-self: center;
+						outline: none;
+						border: none;
+						border-radius: 5px;
+					}
+				}
+			}
+			.ohter_services:nth-child(odd) {
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}

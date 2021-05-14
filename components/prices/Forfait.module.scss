@@ -1,0 +1,88 @@
+.forfait {
+	color: #fff;
+  margin: 0 auto;
+  width: 90%;
+  @media (min-width: 768px) {
+    width: 70%;
+  }
+  // @media (min-width: 1024px) {
+  //   width: 50%;
+  // }
+  .go_back {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: fit-content;
+    cursor: pointer;
+  }
+	.select_forfait {
+    .title {
+      font-size: 24px;
+    }
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.selector {
+			background: rgba(255, 255, 255, 0.16);
+			border-radius: 5px;
+			font-size: 12px;
+      width: 30%;
+      text-align: center;
+		}
+		.selected {
+			background: #00feca;
+			color: #121212;
+		}
+	}
+	.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 1024px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+    }
+    &>div:first-child {
+      margin-top: 30px;
+    }
+    .description_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(255, 255, 255, 0.16);
+      padding: 4px 8px;
+      margin-bottom: 25px;
+      border-radius: 5px;
+      border: none;
+      @media (min-width: 1024px) {
+        flex: 50%;
+        max-width: 45%;
+        margin-top: 30px;
+      }
+      p {
+        margin: 5px 10px;
+        text-align: center;
+        width: 70%;
+      }
+    }
+	}
+  .price {
+    text-align: center;
+    font-size: 45px;
+    color: #00FECA;
+  }
+  .cta {
+    text-align: center;
+    button {
+      font-size: 16px;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      background: #00feca;
+      color: #121212;
+      text-align: center;
+      padding: 15px 25px;
+    }
+  }
+}

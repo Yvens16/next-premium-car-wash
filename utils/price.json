@@ -1,0 +1,22 @@
+{
+	"citadine": {
+		"bronze": 35,
+		"argent": 59,
+		"or": 70
+	},
+	"berline": {
+		"bronze": 45,
+		"argent": 69,
+		"or": 80
+	},
+	"routiere": {
+		"bronze": 55,
+		"argent": 79,
+		"or": 90
+	},
+	"suv": {
+		"bronze": 65,
+		"argent": 89,
+		"or": 110
+	}
+}

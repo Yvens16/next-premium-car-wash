@@ -1,0 +1,200 @@
+.affiliation, .account_created {
+  margin: 0 auto;
+  width: 95%;
+	color: #fff;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .title {
+    p {
+      color: rgba(255, 255, 255, 0.5)
+    }
+    span {
+      color: #0180ff;
+    }
+  }
+  h1 {
+    font-size: 25px;
+  }
+  @media (min-width: 768px) {
+    width: 70%;
+  }
+  @media (min-width: 1024px) {
+    width: 50%;
+    justify-content: center;
+  }
+  @media (min-width: 1400px) {
+    width: 20%;
+  }
+	.content {
+    text-align: center;
+		span {
+			color: #0180ff;
+		}
+	}
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+    button {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: none;
+      border-radius: 5px;
+      margin: 5px 0;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 8px 16px;
+      span {
+        margin-right: 5px;
+      }
+    }
+    .has_lydia {
+      background: #0180FF;
+      color: #fff;
+      &:hover {
+        background: #056ed8;
+      }
+    }
+    .has_not_lydia {
+      background: #fff;
+      &:hover {
+        background: rgb(228, 225, 225);
+      }
+    }
+  }
+}
+
+.with_lydia {
+  text-align: center;
+  height: 80vh;
+  .form {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #808889;
+      cursor: pointer;
+      input {
+        display: none;
+      }
+    }
+    .user_photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .inputs {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      input {
+        border-radius: 5px;
+        background: none;
+        color: #fff;
+        border: 2px solid #0180FF;
+        padding: 6px 12px;
+        width: 100%;
+        outline: none;
+        &:focus {
+          border: 1px solid #fff;
+        }
+      }
+      button {
+        outline: none;
+        color: #fff;
+        background: #0180FF;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+        border-radius: 5px;
+        margin: 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 8px 16px;
+        &:hover {
+          background: #056ed8;
+        }
+        span {
+          margin-right: 5px;
+        }
+        &:disabled {
+          background: grey;
+          cursor:not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.account_created {
+  .picture_affiliate {
+    display: flex;
+    justify-content: center;
+    img {
+      border: 2px solid #05bb97;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+  .description {
+    h1 {
+      text-align: center;
+    }
+  }
+  .affiliate_link {
+    display: flex;
+    flex-direction: column;
+    input, button {
+      border: none;
+      padding: 6px 12px;
+      outline: none;
+      font-size: 16px;
+      margin: 5px 0;
+      color: #121212;
+      padding: 12px 24px;
+      height: 100%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    button {
+      background: #00feca;
+    }
+  }
+}
+
+.snack {
+  div {
+    background: rgb(1, 128, 255);
+    color: #fff;
+  }
+}
+.snack_error {
+  div {
+    background: red;
+    color: #fff;
+  }
+}
