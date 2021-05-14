@@ -37,7 +37,7 @@ export default function Home () {
                     width='353'
                     height='300'
                     layout='responsive'
-                    alt='services'
+                    alt='Nettoyage de voiture'
                   />
                   <h1>
                     Nettoyage intérieur de votre voiture à domicile à Paris
@@ -53,7 +53,7 @@ export default function Home () {
                     width='308'
                     height='150'
                     layout='responsive'
-                    alt='services'
+                    alt='débosselage sans peinture'
                   />
                   <h2>Débosselage sans peinture à Paris </h2>
                 </div>
@@ -67,7 +67,7 @@ export default function Home () {
                     width='308'
                     height='150'
                     layout='responsive'
-                    alt='services'
+                    alt='rénovation de phares'
                   />
                   <h2>Rénovation de phares à Paris</h2>
                 </div>
