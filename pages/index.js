@@ -29,7 +29,7 @@ export default function Home () {
                 alt='logo'
               />
             </div>
-            <Link href='/'>
+            <Link href='/tarif-nettoyage-voiture-paris'>
               <a>
                 <div className={`${styles.services} ${styles.clean}`}>
                   <Image
