@@ -35,35 +35,36 @@ export default function Navbar () {
           className='mobile-menu'
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
-          <Image src='/svg/menu.svg' width='25' height='25' alt='menu'/>
+          <Image src='/svg/menu.svg' width='25' height='25' alt='menu' />
         </div>
         <div
           className={styles.share}
           onClick={() => setDisplaySocial(!displaySocial)}
           ref={shareRef}
         >
-          <Image src='/svg/share.svg' width='25' height='25' alt='partager sur les réseaux' />
+          <Image
+            src='/svg/share.svg'
+            width='25'
+            height='25'
+            alt='partager sur les réseaux'
+          />
           <div className={displaySocial ? styles.show : styles.hide}>
-            <Link href='/'>
-              <a>
-                <Image
-                  src='/svg/instagram_white_svg_turquoise.svg'
-                  width='30'
-                  height='30'
-                  alt='instagram'
-                />
-              </a>
-            </Link>
-            <Link href='/'>
-              <a>
-                <Image
-                  src='/svg/facebook_svg_turquoise.svg'
-                  width='30'
-                  height='30'
-                  alt='facebook'
-                />
-              </a>
-            </Link>
+            <a href='https://www.instagram.com/premiumcarwash_fr' target='_blank'>
+              <Image
+                src='/svg/instagram_white_svg_turquoise.svg'
+                width='30'
+                height='30'
+                alt='instagram'
+              />
+            </a>
+            <a href='https://www.facebook.com/premiumcarwashfr' target='_blank'>
+              <Image
+                src='/svg/facebook_svg_turquoise.svg'
+                width='30'
+                height='30'
+                alt='facebook'
+              />
+            </a>
           </div>
         </div>
         <Link href='tel:+33627269473'>

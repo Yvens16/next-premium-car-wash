@@ -45,7 +45,7 @@ export default function Signup () {
         <h2>Peut-on vous payer ?</h2>
         <p>
           Pour notre lancement, recevez un <span>lydia de 10€</span> pour chaque
-          client prenant un nettoyage de sa voiture chez nous. Ainsi qu'un
+          client prenant un nettoyage de sa voiture chez nous. Ainsi qu'une
           réduction de 15% (non cummulable) pour votre propre voiture
         </p>
       </div>
