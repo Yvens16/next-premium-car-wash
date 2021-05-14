@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import SignupBox from 'components/signup/signupBox'
 import styles from 'styles/affilié.module.scss'
-import { useAuth } from './use-auth'
+import { useAuth } from '../firebase/use-auth'
 
 export default function Affiliate () {
   const auth = useAuth()

@@ -1,5 +1,5 @@
 import '../styles/globals.scss'
-import { ProvideAuth } from './use-auth.js'
+import { ProvideAuth } from '../firebase/use-auth.js'
 import Navbar from '../components/navigation/navbar'
 import Footer from '../components/footer/footer'
 import '@fontsource/roboto';

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { nanoid } from 'nanoid'
-import { useAuth } from './use-auth'
+import { useAuth } from '../firebase/use-auth'
 import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
 import Snackbar from '@material-ui/core/Snackbar'

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import styles from './Signup.module.scss'
 import Snackbar from '@material-ui/core/Snackbar'
-import { useAuth } from '../../pages/use-auth'
+import { useAuth } from '../../firebase/use-auth'
 
 export default function Signup () {
   const auth = useAuth()
