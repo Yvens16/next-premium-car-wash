@@ -71,7 +71,7 @@ export default function discount ({ price, goBack, affiliateInfo }) {
           <a
             rel="noreferrer"
             target='_blank'
-            href={`https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture?a4=${affiliateInfo.name}&a5=${affiliateInfo.phoneNumber}`}
+            href={`https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture?a4=${affiliateInfo?.name || ''}&a5=${affiliateInfo?.phoneNumber || ''}`}
           >
             Réserver un nettoyage
           </a>
