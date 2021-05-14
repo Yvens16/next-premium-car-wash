@@ -45,8 +45,7 @@ export default function Home () {
                 </div>
               </a>
             </Link>
-            <Link href='/'>
-              <a>
+              <a href='https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture' target='_blank'>
                 <div className={`${styles.services} ${styles.no_dent}`}>
                 <Image
                     src='/images/debosselage_2_tiny.jpeg'
@@ -58,9 +57,7 @@ export default function Home () {
                   <h2>Débosselage sans peinture à Paris </h2>
                 </div>
               </a>
-            </Link>
-            <Link href='/'>
-              <a>
+              <a href='https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture' target='_blank'>
                 <div className={`${styles.services} ${styles.phares}`}>
                 <Image
                     src='/images/tinted_glass_small _tiny.jpeg'
@@ -72,7 +69,6 @@ export default function Home () {
                   <h2>Rénovation de phares à Paris</h2>
                 </div>
               </a>
-            </Link>
           </section>
           <section className={styles.home_hero_desktop}>
             <section className={`${styles.services} ${styles.clean}`}>
