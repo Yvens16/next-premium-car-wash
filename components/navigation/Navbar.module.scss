@@ -16,6 +16,7 @@
 	.mobile {
 		display: flex;
 		justify-content: space-around;
+		padding: 15px 0;
 		@media (min-width: 1024px) {
 			display: none;
 		}
