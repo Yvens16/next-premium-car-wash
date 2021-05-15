@@ -10,7 +10,7 @@ export default function NettoyageVoitureParis () {
         <title>
           Nettoyage d'intérieur de voiture à Paris au même prix que les pro
         </title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width initial-scale=1, maximum-scale=1, user-scalable=0'/>
         <meta
           name='description'
           content='Profitez des réductions des professionnels vous aussi'
@@ -23,7 +23,7 @@ export default function NettoyageVoitureParis () {
             <h1>Nettoyage intérieur de voiture dans Paris et sa banlieu</h1>
             <h2>À domicile ou au bureau</h2>
             <button>
-              <Link href='/tarif-nettoyage-voiture-paris'>
+              <Link href='/tarifs'>
                 <a>
               Nettoyer sa voiture
 
@@ -104,7 +104,7 @@ export default function NettoyageVoitureParis () {
           </section>
           <div className={styles.cta_bottom}>
             <button>
-              <Link href='/tarif-nettoyage-voiture-paris'>
+              <Link href='/tarifs'>
                 <a>
               Nettoyer sa voiture
 
@@ -136,7 +136,7 @@ export default function NettoyageVoitureParis () {
           </section>
           <div className={styles.cta_bottom}>
             <button>
-              <Link href='/tarif-nettoyage-voiture-paris'>
+              <Link href='/tarifs'>
                 <a>
               Nettoyer sa voiture
 

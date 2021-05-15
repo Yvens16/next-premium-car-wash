@@ -11,7 +11,7 @@ export default function Home () {
         // TODO: Rewrite the title in a coopywritting way to entice peopple to
         click on the link
         <title>Nettoyage d'intérieur de voiture à Paris</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width initial-scale=1, maximum-scale=1, user-scalable=0'/>
         <meta
           name='description'
           content="Le nettoyage de l'intérieur de votre voiture à Paris"

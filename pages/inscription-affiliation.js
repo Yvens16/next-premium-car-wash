@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { nanoid } from 'nanoid'
 import { useAuth } from '../firebase/use-auth'
+import Head from 'next/head'
 import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
 import Snackbar from '@material-ui/core/Snackbar'
@@ -29,7 +30,7 @@ export default function Affiliation () {
   })
   const [open, setOpen] = useState(false)
   const [error, setError] = useState(false)
-  const [msg, setMsg] = useState('');
+  const [msg, setMsg] = useState('')
   const [errorMsg, setErrorMsg] = useState(false)
   const { vertical, horizontal } = state
   const onFileChange = e => {
@@ -144,7 +145,7 @@ export default function Affiliation () {
     copyText.setSelectionRange(0, 99999) /* For mobile devices */
 
     document.execCommand('copy')
-    setMsg('Votre lien à été copié');
+    setMsg('Votre lien à été copié')
     setOpen(true)
   }
 
@@ -194,7 +195,9 @@ export default function Affiliation () {
             id='clipboard'
           />
           <button onClick={copyToClipboard}>Copier mon lien</button>
-          {navigator?.share ? <button onClick={shareLink}>Partager mon lien</button> : null}
+          {navigator?.share ? (
+            <button onClick={shareLink}>Partager mon lien</button>
+          ) : null}
         </div>
       </section>
     )
@@ -207,17 +210,27 @@ export default function Affiliation () {
   }
   return (
     <main>
+      <Head>
+        <title>
+          Nettoyage d'intérieur de voiture à Paris au même prix que les pro
+        </title>
+        <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width initial-scale=1, maximum-scale=1, user-scalable=0'
+        />
+        <meta
+          name='description'
+          content="Gagnez 10€ à chaque fois que quelqu'un réserve à partir de votre lien"
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       {affiliateInfo ? accountCreated() : showAccountCreation()}{' '}
       <Snackbar
         className={error ? styles.snack_error : styles.snack}
         anchorOrigin={{ vertical, horizontal }}
         open={open}
         onClose={handleClose}
-        message={
-          error
-            ? errorMsg
-            : msg
-        }
+        message={error ? errorMsg : msg}
         key={vertical + horizontal}
       />
     </main>
