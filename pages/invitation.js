@@ -45,7 +45,7 @@ export default function Affiliate () {
     return (
       <section className={styles.affiliate}>
         <section className={styles.picture}>
-          <img src={affiliateData.photoUrl} alt="Profil"/>
+          <img src={affiliateData?.photoUrl} alt="Profil"/>
         </section>
         <section className={styles.affiliate_title}>
           <h1>{affiliateData.name} vous invite à faire nettoyer l'intérieur votre voiture à domicile par nos soins</h1>

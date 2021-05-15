@@ -172,7 +172,7 @@ export default function Affiliation () {
     return (
       <section className={styles.account_created}>
         <div className={styles.picture_affiliate}>
-          <img src={auth?.user?.photoURL} alt='profil' />
+          <img src={affiliateInfo?.photoUrl} alt='profil' />
         </div>
         <div className={styles.description}>
           <h1>
