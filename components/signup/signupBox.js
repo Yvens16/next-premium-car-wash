@@ -35,7 +35,10 @@ export default function Signup () {
     console.log('mail:', mail)
     auth
       .signupWithMagicLink(mail)
-      .then(() => handleClick())
+      .then(() => {
+        handleClick()
+        setmail('')
+      })
       .catch(err => handleClick(true, err))
   }
   return (
@@ -51,7 +54,7 @@ export default function Signup () {
       </div>
       <div className={styles.input}>
         <input
-          autoComplete="email"
+          autoComplete='email'
           type='email'
           placeholder='Votre email'
           name='email_signup'
