@@ -47,20 +47,38 @@ export default function Affiliation () {
     )
   }
 
+  const checkAndShowRightErrMsg = (file, name, phone) => {
+    if (!file) {
+      setErrorMsg("Vous devez ajouté une photo pour terminer votre inscription")
+    } else if (!name) {
+      setErrorMsg("Vous devez ajouté votre Prénom et Nom pour terminer votre inscription")
+    } else if (!phone) {
+      setErrorMsg("Vous devez ajouté votre numéro de téléphone pour terminer votre inscription")
+    } else {
+      setOpen(false)
+    }
+    setError(true);
+    setOpen(true);
+  }
+
   const createAccount = () => {
-    return auth
-      .finishSignup_inWithMagicLink(name, phone, affiliateId)
-      .then(res => {
-        return auth.uploadProfilePictureToStorage(
-          selectedFile,
-          res.user,
-          res.affiliateId
-        )
-      })
-      .then(() => {
-        showCreatedAccount()
-      })
-      .catch(err => console.log('createAccount', err))
+    if (selectedFile && name && phone) {
+      return auth
+        .finishSignup_inWithMagicLink(name, phone, affiliateId)
+        .then(res => {
+          return auth.uploadProfilePictureToStorage(
+            selectedFile,
+            res.user,
+            res.affiliateId
+          )
+        })
+        .then(() => {
+          showCreatedAccount()
+        })
+        .catch(err => console.log('createAccount', err))
+    } else {
+      checkAndShowRightErrMsg(selectedFile, name, phone)
+    }
   }
 
   const showCreatedAccount = () => {
@@ -224,7 +242,8 @@ export default function Affiliation () {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {affiliateInfo ? accountCreated() : showAccountCreation()}{' '}
+      {showAccountCreation()}
+      {/* {affiliateInfo ? accountCreated() : showAccountCreation()}{' '} */}
       <Snackbar
         className={error ? styles.snack_error : styles.snack}
         anchorOrigin={{ vertical, horizontal }}

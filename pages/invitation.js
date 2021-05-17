@@ -35,7 +35,8 @@ export default function Affiliate () {
     return (
       <main className={styles.signup}>
         <h1>Il semblerait que le lien que vous ayez reçu ne soit pas le bon</h1>
-        <h3>N'hésitez pas à le demander à votre ami !</h3>
+        <p>Mais n'hésitez pas à ajouter votre email pour créer votre propre lien</p>
+        <p>Pourquoi ne pas gagner un smic horaire en 5 min  ?</p>
         <SignupBox />
       </main>
     )
