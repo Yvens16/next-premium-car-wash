@@ -70,11 +70,11 @@ export default function Contact () {
       <section className={styles.contact_us}>
         <section className={styles.infos}>
           <div className={styles.mail}>
-            <Image src='/svg/mail.svg' width='30' height='30' />
+            <Image alt='email' src='/svg/mail.svg' width='30' height='30' />
             <span>contact.premiumcarwash@gmail.com</span>
           </div>
           <div className={styles.phone}>
-            <Image src='/svg/phone-call.svg' width='30' height='30' />
+            <Image alt='téléphone' src='/svg/phone-call.svg' width='30' height='30' />
             <span>+33 6 27 26 94 73</span>
           </div>
         </section>

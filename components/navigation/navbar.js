@@ -35,7 +35,7 @@ export default function Navbar () {
           className='mobile-menu'
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
-          <Image src='/svg/menu.svg' width='25' height='25' alt='menu' />
+          <Image src='/svg/menu.svg' width='25' height='25' alt='menu' alt='menu' />
         </div>
         <div
           className={styles.share}
@@ -70,7 +70,7 @@ export default function Navbar () {
         <Link href='tel:+33627269473'>
           <a>
             <div className='mobile-phone'>
-              <Image src='/svg/phone-call.svg' width='25' height='25' />
+              <Image src='/svg/phone-call.svg' width='25' height='25' alt='phone'/>
             </div>
           </a>
         </Link>

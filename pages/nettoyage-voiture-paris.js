@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from '../styles/NettoyageBlogPost.module.scss'
 import Link from 'next/link'
 import Head from 'next/head'

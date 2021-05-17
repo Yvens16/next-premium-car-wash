@@ -89,7 +89,7 @@ export default function Affiliation () {
                   onChange={onFileChange}
                 ></input>
                 {selectedFile === null ? (
-                  <Image src='/svg/plus.svg' width='40' height='40' />
+                  <Image alt='profile' src='/svg/plus.svg' width='40' height='40' />
                 ) : (
                   <img
                     className={styles.user_photo}
@@ -129,7 +129,7 @@ export default function Affiliation () {
               >
                 {' '}
                 <span>Créer mon compte</span>{' '}
-                <Image src='/svg/lydia.svg' width='25' height='25'></Image>
+                <Image alt='logo lydia' src='/svg/lydia.svg' width='25' height='25'></Image>
               </button>
             </div>
           </div>

@@ -43,7 +43,7 @@ export default function Signup () {
   }
   return (
     <section className={styles.signup}>
-      <Image src='/svg/lydia_blue.svg' width='40' height='40' />
+      <Image alt='logo lydia' src='/svg/lydia_blue.svg' width='40' height='40' />
       <div className={styles.title}>
         <h2>Peut-on vous payer ?</h2>
         <p>

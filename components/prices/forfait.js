@@ -66,7 +66,7 @@ export default function Forfait ({
   return (
     <section className={styles.forfait}>
       <div className={styles.go_back} onClick={goBack}>
-        <Image src='/svg/back.svg' width={40} height={40} />
+        <Image alt='boutton retour' src='/svg/back.svg' width={40} height={40} />
       </div>
       <div className={styles.title}>
         <h1>Les Forfaits</h1>
@@ -100,7 +100,7 @@ export default function Forfait ({
       <div className={styles.description}>
         {forfaitDesc[selectedForfait].map((el, index) => (
           <div key={index} className={styles.description_item}>
-            <Image src={el.url} width={70} height={70} />
+            <Image alt='type de service' src={el.url} width={70} height={70} />
             <p>{el.text}</p>
           </div>
         ))}
