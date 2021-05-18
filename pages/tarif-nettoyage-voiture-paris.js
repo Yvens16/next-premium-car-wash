@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
+import { firebaseAnalytics } from '../firebase/firebase'
 import CarChoice from '../components/prices/CarChoice'
 import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
@@ -24,9 +25,18 @@ export default function Tarifs () {
     newStateCars.splice(index, 1)
     setCar(newStateCars)
   }
-  const createCar = carType => {
+  const chooseCarType = carType => {
+    if (process.env.NODE_ENV === 'production') {
+      firebaseAnalytics().logEvent('select_car_type', { name: carType });
+    }
     const newCar = prices[carType]
     addNewCar(newCar)
+  }
+
+  const logBoughtEvent = () => {
+    if (process.env.NODE_ENV === 'production') {
+      firebaseAnalytics().logEvent('select_forfait_to_be_bought', { name: forfait });
+    }
   }
 
   const selectForfait = selectedForfait => {
@@ -36,6 +46,9 @@ export default function Tarifs () {
   }
 
   const goToDiscount = () => {
+    if (process.env.NODE_ENV === 'production') {
+      firebaseAnalytics().logEvent('select_forfait', { name: forfait });
+    }
     setPageIndex(2)
   }
   const goBack = () => {
@@ -55,7 +68,7 @@ export default function Tarifs () {
     }
   }, [])
 
-  let choiceComponent = <CarChoice chooseCar={createCar} />
+  let choiceComponent = <CarChoice chooseCar={chooseCarType} />
   let forfaitComponent = (
     <Forfaits
       scrollRef={scrollRef}
@@ -66,7 +79,7 @@ export default function Tarifs () {
       goBack={goBack}
     />
   )
-  let discountComponent = <Discount price={price} goBack={goBack} affiliateInfo={affiliateInfo}/>
+  let discountComponent = <Discount price={price} goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent}/>
   return (
     <main>
       {console.log(affiliateInfo)}

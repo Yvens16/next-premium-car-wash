@@ -109,7 +109,7 @@ export default function Forfait ({
         <p>Prix: {price}€</p>
       </div>
       <div className={styles.cta}>
-        <button onClick={goToDiscount}>Obtenir une réduction</button>
+        <button onClick={goToDiscount}>Voir réduction et réserver</button>
       </div>
     </section>
   )

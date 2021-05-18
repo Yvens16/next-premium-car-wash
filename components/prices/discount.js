@@ -2,7 +2,7 @@ import styles from './Discount.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function discount ({ price, goBack, affiliateInfo }) {
+export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent }) {
   console.log('price:', price)
   return (
     <section className={styles.discount}>
@@ -67,7 +67,7 @@ export default function discount ({ price, goBack, affiliateInfo }) {
         </div>
       </div>
       <div className={styles.cta}>
-        <button>
+        <button onClick={logBoughtEvent}>
           <a
             rel="noreferrer"
             target='_blank'

@@ -60,7 +60,7 @@ export default function Contact () {
   return (
     <main className={styles.contact}>
       <Head>
-        <title>Contactez-nous !</title>
+        <title>Contactez-nous pour un devis ou tout autres demandes!</title>
         <meta
           name='description'
           content="Contactez-nous pour un nettoyage en profondeur !"

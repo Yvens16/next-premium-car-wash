@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
+import { firebaseAnalytics } from '../../firebase/firebase'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Navbar.module.scss'
@@ -20,10 +21,18 @@ export default function Navbar () {
     const handleRouteChange = (url, { shallow }) => {
       setShowMobileMenu(false)
     }
-
+      const logEvent = (url) => {
+        if (process.env.NODE_ENV === 'production') {
+          firebaseAnalytics().setCurrentScreen(url);
+          firebaseAnalytics().logEvent('sreen_view');
+        }
+      }
+      logEvent(window.location.pathname) // For first load of the website
     router.events.on('routeChangeStart', handleRouteChange)
+    router.events.on('routeChangeComplete', logEvent)
     return () => {
       router.events.off('routeChangeStart', handleRouteChange)
+      router.events.off('routeChangeComplete', logEvent)
       document.removeEventListener('mousedown', handleClick)
     }
   }, [])

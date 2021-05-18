@@ -230,7 +230,7 @@ export default function Affiliation () {
     <main>
       <Head>
         <title>
-          Nettoyage d'intérieur de voiture à Paris au même prix que les pro
+          Inscrivez pour gagner un lydia de 10€ à chaque client venant de votre lien
         </title>
         <meta
           name='viewport'
