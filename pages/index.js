@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Signup from 'components/signup/signupBox'
 
 export default function Home () {
+  console.log('Deploy number 1')
   return (
     <div className={styles.container}>
       <Head>
@@ -27,6 +28,7 @@ export default function Home () {
                 width='50'
                 height='50'
                 alt='logo'
+                priority={true}
               />
             </div>
             <Link href='/tarif-nettoyage-voiture-paris'>
@@ -38,6 +40,7 @@ export default function Home () {
                     height='300'
                     layout='responsive'
                     alt='Nettoyage de voiture'
+                    priority={true}
                   />
                   <h1>
                     Nettoyage intérieur de votre voiture à domicile à Paris
@@ -53,6 +56,7 @@ export default function Home () {
                     height='150'
                     layout='responsive'
                     alt='débosselage sans peinture'
+                    priority={true}
                   />
                   <h2>Débosselage sans peinture à Paris </h2>
                 </div>
@@ -65,6 +69,7 @@ export default function Home () {
                     height='150'
                     layout='responsive'
                     alt='rénovation de phares'
+                    priority={true}
                   />
                   <h2>Rénovation de phares à Paris</h2>
                 </div>
