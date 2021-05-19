@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import isMobile from 'utils/isMobile'
@@ -8,14 +7,8 @@ const DesktopHome = dynamic(() => import('components/home/DesktopHome'))
 // const Signup = dynamic(() => import('components/signup/signupBox'))
 import Signup from 'components/signup/signupBox'
 
-export default function Home () {
-  const [isMobileBrowser, setIsMobileBrowser] = useState(null);
-  useEffect(() => {
-    setIsMobileBrowser(isMobile)
-    return () => {
-      setIsMobileBrowser(null)
-    }
-  }, [])
+export default function Home ({ isMobile }) {
+  // const isMobileBrowser = isMobile();
   return (
     <div className={styles.container}>
       <Head>
@@ -34,7 +27,9 @@ export default function Home () {
       </Head>
       <main className={styles.home}>
         <div className={styles.home_hero}>
-          <>{isMobileBrowser ? <MobileHome/> : <DesktopHome/>}</>
+          {/* {isMobile ? <MobileHome/> : <DesktopHome/>} */}
+          <MobileHome/>
+          <DesktopHome/>
           <Signup />
         </div>
       </main>
