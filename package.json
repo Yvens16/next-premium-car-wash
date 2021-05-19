@@ -20,6 +20,7 @@
     "react-dom": "17.0.2",
     "react-toastify": "^7.0.4",
     "sass": "^1.32.11",
+    "ua-parser-js": "^0.7.28",
     "xml-formatter": "^2.4.0"
   }
 }
