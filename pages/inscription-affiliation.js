@@ -20,6 +20,7 @@ export default function Affiliation () {
     selectedFile: null,
     selectedFileUrl: null
   })
+  const [ downloadUrl, setDownloadUrl ] = useState(null)
   const [name, setName] = useState('')
   const [affiliateId, setAffiliateId] = useState('')
   const [phone, setPhone] = useState('')
@@ -41,10 +42,6 @@ export default function Affiliation () {
   }
   const createAffiliateId = () => {
     setAffiliateId(`${name.replace(/ /g, '').toLowerCase()}_${nanoid(4)}`)
-    console.log(
-      'Loose Focus',
-      `${name.replace(/ /g, '').toLowerCase()}_${nanoid(4)}`
-    )
   }
 
   const checkAndShowRightErrMsg = (file, name, phone) => {
@@ -72,7 +69,8 @@ export default function Affiliation () {
             res.affiliateId
           )
         })
-        .then(() => {
+        .then((url) => {
+          setDownloadUrl(url);
           showCreatedAccount()
         })
         .catch(err => console.log('createAccount', err))
@@ -186,11 +184,10 @@ export default function Affiliation () {
   }
 
   const accountCreated = () => {
-    console.log(auth.user)
     return (
       <section className={styles.account_created}>
         <div className={styles.picture_affiliate}>
-          <img src={affiliateInfo?.photoUrl} alt='profil' />
+          <img src={affiliateInfo?.photoUrl || downloadUrl} alt='profil' />
         </div>
         <div className={styles.description}>
           <h1>
@@ -221,7 +218,6 @@ export default function Affiliation () {
     )
   }
   const handleClose = (event, reason) => {
-    console.log('reason:', reason)
     if (reason === 'clickaway') {
       setOpen(false)
     }

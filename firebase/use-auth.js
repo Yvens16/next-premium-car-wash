@@ -141,7 +141,7 @@ function useProvideAuth () {
           .collection('affiliates')
           .doc(affiliateId)
           .set({ photoUrl }, { merge: true })
-      })
+      }).then(() => console.log('PhotoUrl added to affilaite'))
   }
 
   const uploadProfilePictureToStorage = (file, user, affiliateId) => {
@@ -151,60 +151,66 @@ function useProvideAuth () {
     const metadata = {
       contentType: file.type
     }
-    const uploadTask = profileImagesRef.put(file, metadata)
-    uploadTask.on(
-      'state_changed',
-      snapshot => {
-        let progress = (snapshot.bytesTransferred / snapshot.totalNytes) * 100
-        console.log('Upload is ' + progress + '% done')
-        switch (snapshot.state) {
-          case firebase.storage.TaskState.PAUSED: // or 'paused'
-            console.log('Upload is paused')
-            break
-          case firebase.storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running')
-            break
+    let urlToUplaod;
+    return new Promise((resolve, reject) => {
+      const uploadTask = profileImagesRef.put(file, metadata)
+      uploadTask.on(
+        'state_changed',
+        snapshot => {
+          let progress = (snapshot.bytesTransferred / snapshot.totalNytes) * 100
+          console.log('Upload is ' + progress + '% done')
+          switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
+              console.log('Upload is paused')
+              break
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+              console.log('Upload is running')
+              break
+          }
+        },
+        error => {
+          switch (error.code) {
+            case 'storage/unauthorized':
+              console.log('storage/unauthorized', error)
+              // User doesn't have permission to access the object
+              break
+            case 'storage/canceled':
+              console.log('storage/canceled', error)
+              // User canceled the upload
+              break
+  
+            // ...
+  
+            case 'storage/unknown':
+              console.log('storage/unknown', code)
+              // Unknown error occurred, inspect error.serverResponse
+              break
+          }
+        },
+        () => {
+          uploadTask.snapshot.ref
+            .getDownloadURL()
+            .then(downloadURL => {
+              console.log('file available at:', downloadURL)
+              addPhotoRef(user, downloadURL, affiliateId)
+              urlToUplaod = downloadURL;
+              return downloadURL
+            })
+            .then(url => {
+              user
+                .updateProfile({
+                  photoURL: url
+                })
+                .then(() => {
+                  console.log('UPDATE SUCESSFULL')
+                  resolve(urlToUplaod);
+                  
+                })
+                .catch(err => console.log('update failed', err))
+            })
         }
-      },
-      error => {
-        switch (error.code) {
-          case 'storage/unauthorized':
-            console.log('storage/unauthorized', error)
-            // User doesn't have permission to access the object
-            break
-          case 'storage/canceled':
-            console.log('storage/canceled', error)
-            // User canceled the upload
-            break
-
-          // ...
-
-          case 'storage/unknown':
-            console.log('storage/unknown', code)
-            // Unknown error occurred, inspect error.serverResponse
-            break
-        }
-      },
-      () => {
-        uploadTask.snapshot.ref
-          .getDownloadURL()
-          .then(downloadURL => {
-            console.log('file available at:', downloadURL)
-            addPhotoRef(user, downloadURL, affiliateId)
-            return downloadURL
-          })
-          .then(url => {
-            user
-              .updateProfile({
-                photoURL: url
-              })
-              .then(() => {
-                console.log('UPDATE SUCESSFULL')
-              })
-              .catch(err => console.log('update failed', err))
-          })
-      }
-    )
+      )
+    })
   }
 
   const getAffiliate = affiliateId => {
