@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import Image from 'next/image'
 import styles from './Signup.module.scss'
-import Snackbar from '@material-ui/core/Snackbar'
+const Snackbar = dynamic(() => import('@material-ui/core/Snackbar').then((Snackbar) => Snackbar))
 import { useAuth } from '../../firebase/use-auth'
 
 export default function Signup () {
@@ -32,7 +33,6 @@ export default function Signup () {
     }
   }
   const createAccount = () => {
-    console.log('mail:', mail)
     auth
       .signupWithMagicLink(mail)
       .then(() => {
@@ -43,7 +43,7 @@ export default function Signup () {
   }
   return (
     <section className={styles.signup}>
-      <Image alt='logo lydia' src='/svg/lydia_blue.svg' width='40' height='40' />
+      <Image alt='logo lydia' src='/svg/lydia_blue.svg' width='40' height='40' laoding='lazy' />
       <div className={styles.title}>
         <h2>Peut-on vous payer ?</h2>
         <p>

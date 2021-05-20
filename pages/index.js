@@ -1,14 +1,12 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import isMobile from 'utils/isMobile'
 import styles from '../styles/Home.module.scss'
 const MobileHome = dynamic(() => import('components/home/MobileHome'))
 const DesktopHome = dynamic(() => import('components/home/DesktopHome'))
 // const Signup = dynamic(() => import('components/signup/signupBox'))
 import Signup from 'components/signup/signupBox'
 
-export default function Home ({ isMobile }) {
-  // const isMobileBrowser = isMobile();
+export default function Home () {
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +25,6 @@ export default function Home ({ isMobile }) {
       </Head>
       <main className={styles.home}>
         <div className={styles.home_hero}>
-          {/* {isMobile ? <MobileHome/> : <DesktopHome/>} */}
           <MobileHome/>
           <DesktopHome/>
           <Signup />

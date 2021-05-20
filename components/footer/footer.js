@@ -10,6 +10,7 @@ export default function Footer () {
           src='/svg/carwashlogominified.svg'
           width='40'
           height='40'
+          loading='lazy'
           alt='logo'
         ></Image>
         <h2>Préparation et esthétique automobile</h2>

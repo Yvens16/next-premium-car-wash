@@ -242,8 +242,7 @@ export default function Affiliation () {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {showAccountCreation()}
-      {/* {affiliateInfo ? accountCreated() : showAccountCreation()}{' '} */}
+      {affiliateInfo ? accountCreated() : showAccountCreation()}{' '}
       <Snackbar
         className={error ? styles.snack_error : styles.snack}
         anchorOrigin={{ vertical, horizontal }}
