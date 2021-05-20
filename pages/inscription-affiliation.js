@@ -4,7 +4,9 @@ import { useAuth } from '../firebase/use-auth'
 import Head from 'next/head'
 import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
+import NProgress from 'nprogress';
 import Snackbar from '@material-ui/core/Snackbar'
+import 'nprogress/nprogress.css';
 
 /*
 TODO: Logique to sign up, with email
@@ -60,6 +62,7 @@ export default function Affiliation () {
 
   const createAccount = () => {
     if (selectedFile && name && phone) {
+      NProgress.start()
       return auth
         .finishSignup_inWithMagicLink(name, phone, affiliateId)
         .then(res => {
@@ -84,6 +87,7 @@ export default function Affiliation () {
       if (result.exists) {
         setAffiliateInfo(result.doc)
       }
+      NProgress.done()
     })
   }
 
