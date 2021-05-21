@@ -36,6 +36,15 @@ export default function Signup () {
     auth
       .signupWithMagicLink(mail)
       .then(() => {
+        fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/addContactTomailchimp`, {
+          method: 'POST',
+          body: JSON.stringify({ mail })
+        }).then(res => {
+          return res.json()
+          .then(console.log('ACCOUNT ADDED TO MAILCHIMP'))
+        })
+      })
+      .then(() => {
         handleClick()
         setmail('')
       })
@@ -79,7 +88,7 @@ export default function Signup () {
         message={
           error
             ? errorMsg
-            : "Sur cet appareil, cliquez sur le lien dans l'email et l'ouvrir dans ce navigateur pour terminer votre inscription"
+            : "Vérifiez vos emails pour terminer votre inscription. Vous recevrez nos dernières chaque mois pour que vous puissiez gagner un maximum !"
         }
         key={vertical + horizontal}
       />
