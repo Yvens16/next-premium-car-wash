@@ -54,7 +54,7 @@ export default function Affiliate () {
         </section>
         <section className={styles.affiliate_title}>
           <h1>
-            {affiliateData.name} vous invite à faire nettoyer l'intérieur votre
+            {affiliateData.name} vous invite à faire nettoyer l'intérieur de votre
             voiture à domicile par nos soins
           </h1>
           <p>Réservez à partir de cette page</p>
@@ -104,7 +104,7 @@ export default function Affiliate () {
     <main>
       <Head>
         <title>
-          Terminez votre inscription
+          Réserve un nettoyage de ta voiture ici
         </title>
         <meta
           name='viewport'
@@ -112,7 +112,7 @@ export default function Affiliate () {
         />
         <meta
           name='description'
-          content="Terminez votre incription pour un lydia de 10€ à chaque vente"
+          content="Si tu réserve un nettoyage à travers mon lien, tu me fais gagner un lydia de 10€ !"
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
