@@ -146,8 +146,9 @@ function useProvideAuth () {
 
   const uploadProfilePictureToStorage = (file, user, affiliateId) => {
     const storageRef = FirebaseStorage.ref()
-    const profilePictureRef = storageRef.child(file.name)
-    const profileImagesRef = storageRef.child(`images/${file.name}`)
+    const name = `${file.name}_${affiliateId}`;
+    const profilePictureRef = storageRef.child(name)
+    const profileImagesRef = storageRef.child(`images/${name}`)
     const metadata = {
       contentType: file.type
     }
