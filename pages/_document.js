@@ -18,9 +18,24 @@ class MyDocument extends Document {
             }}
           />
           {/* End MailChimp script*/}
-          <meta name="facebook-domain-verification" content="iuotmvzu7n2atpa43bee2741w5humk" />
+          <meta
+            name='facebook-domain-verification'
+            content='iuotmvzu7n2atpa43bee2741w5humk'
+          />
+          {/* Begin facebook pixel */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1793802514115038');fbq('track', 'PageView')`
+            }}
+          />
+          {/* End facebook pixel */}
         </Head>
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<img height="1" width="1" style="display:none"src="https://www.facebook.com/tr?id=1793802514115038&ev=PageView&noscript=1"/>`
+            }}
+          />
           <Main />
           <NextScript />
         </body>
