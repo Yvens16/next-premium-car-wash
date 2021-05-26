@@ -21,8 +21,10 @@ export default function Signup () {
     if (error) {
       setError(error)
       if ((code = 'auth/invalid-email')) {
-        setErrorMsg("L'email entrez n'a pas un bon format")
+        setErrorMsg("L'email entré n'a pas un bon format")
       }
+    } else {
+      setmail('')
     }
   }
 
@@ -46,7 +48,6 @@ export default function Signup () {
       })
       .then(() => {
         handleClick()
-        setmail('')
       })
       .catch(err => handleClick(true, err))
   }
@@ -76,7 +77,7 @@ export default function Signup () {
         </button>
       </div>
       <div className={styles.description}>
-        <p>L'argent est transférer sur</p>
+        <p>L'argent est transféré sur</p>
         <p>* votre compte lydia</p>
         <p>* sur votre compte bancaire si vous n'avez pas lydia</p>
       </div>

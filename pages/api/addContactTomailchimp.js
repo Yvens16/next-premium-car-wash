@@ -27,7 +27,6 @@ export default async (req, res) => {
   }
   try {
     const response = await addContactToList(subscriberUSer)
-    console.log('response:', response)
     res.status(200).json({
       contactAdded: true,
       response

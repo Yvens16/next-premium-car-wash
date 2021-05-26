@@ -231,7 +231,6 @@ function useProvideAuth () {
             exists: false
           }
         }
-        console.log('response:', response)
         return response
       })
       .catch(err => {
