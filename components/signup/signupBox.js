@@ -55,7 +55,7 @@ export default function Signup () {
     <section className={styles.signup}>
       <Image alt='logo lydia' src='/svg/lydia_blue.svg' width='40' height='40' laoding='lazy' />
       <div className={styles.title}>
-        <h2>Peut-on vous payer ?</h2>
+        <h2>Et si vous étiez payé vous aussi ?</h2>
         <p>
           Pour notre lancement, recevez un <span>lydia de 10€</span> pour chaque
           client prenant un nettoyage de sa voiture chez nous. Ainsi qu'une

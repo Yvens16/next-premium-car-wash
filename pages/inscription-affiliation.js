@@ -258,7 +258,7 @@ export default function Affiliation () {
 // Please fill out this form, and we'll send you a welcome email so you can verify your email address and sign in.
 {
   /* <div className={styles.content}>
-          <h1>Peut-on vous payer ?</h1>
+          <h1>Et si vous étiez payé vous aussi ?</h1>
           <p>
             Pour notre lancement, recevez un <span>lydia de 10€</span> pour
             chaque client prenant un nettoyage de sa voiture chez nous. Ainsi
