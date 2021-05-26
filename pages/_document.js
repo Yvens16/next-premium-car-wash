@@ -18,6 +18,7 @@ class MyDocument extends Document {
             }}
           />
           {/* End MailChimp script*/}
+          <meta name="facebook-domain-verification" content="iuotmvzu7n2atpa43bee2741w5humk" />
         </Head>
         <body>
           <Main />
