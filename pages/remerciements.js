@@ -7,6 +7,12 @@ import { useAuth } from '../firebase/use-auth'
 
 
 export default function Affiliate () {
+  const [isReservation, setIsReservation] = useState(false)
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has('reservation')) {
+      setIsReservation(true);
+    }
+  }, [])
   return (
     <main>
       <Head>
@@ -23,7 +29,7 @@ export default function Affiliate () {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>Merci pour votre réservation !</h1>
+      {isReservation ? <h1>Merci pour votre réservation !</h1> : null}
       <style jsx>{`
         h1 {
           text-align: center;
