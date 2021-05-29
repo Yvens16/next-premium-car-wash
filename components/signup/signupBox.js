@@ -53,7 +53,16 @@ export default function Signup () {
   }
   return (
     <section className={styles.signup}>
+      <div className={styles.logos}>
       <Image alt='logo lydia' src='/svg/lydia_blue.svg' width='40' height='40' laoding='lazy' />
+      <Image
+          src='/svg/carwashlogominified.svg'
+          width='40'
+          height='40'
+          loading='lazy'
+          alt='logo'
+        />
+      </div>
       <div className={styles.title}>
         <h2>Et si vous étiez payé vous aussi ?</h2>
         <p>
