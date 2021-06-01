@@ -96,6 +96,7 @@ export default function Affiliation () {
         name,
         phone
       ).then((url) => {
+        setShowSpinner(false);
         setDownloadUrl(url);
         showCreatedAccount()
       })
@@ -110,7 +111,6 @@ export default function Affiliation () {
       if (result.exists) {
         setAffiliateInfo(result.doc)
       }
-      setShowSpinner(false);
     })
   }
 
