@@ -63,6 +63,7 @@ function useProvideAuth () {
     try {
       await firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
       window.localStorage.setItem('emailForSignIn', email)
+      console.log('window.localStorage: set item', window.localStorage)
       return true
     } catch (error) {
       console.log('error: function', error)
@@ -78,6 +79,7 @@ function useProvideAuth () {
     console.log('location', window.location.href)
     return new Promise(res => {
       if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
+        console.log('window.localStorage:', window.localStorage)
         let email = window.localStorage.getItem('emailForSignIn')
         if (!email) {
           email = window.prompt(
@@ -141,7 +143,8 @@ function useProvideAuth () {
           .collection('affiliates')
           .doc(affiliateId)
           .set({ photoUrl }, { merge: true })
-      }).then(() => console.log('PhotoUrl added to affilaite'))
+      })
+      .then(() => console.log('PhotoUrl added to affilaite'))
   }
 
   const uploadProfilePictureToStorage = (file, user, affiliateId) => {
@@ -152,7 +155,7 @@ function useProvideAuth () {
     const metadata = {
       contentType: file.type
     }
-    let urlToUplaod;
+    let urlToUplaod
     return new Promise((resolve, reject) => {
       const uploadTask = profileImagesRef.put(file, metadata)
       uploadTask.on(
@@ -179,9 +182,9 @@ function useProvideAuth () {
               console.log('storage/canceled', error)
               // User canceled the upload
               break
-  
+
             // ...
-  
+
             case 'storage/unknown':
               console.log('storage/unknown', code)
               // Unknown error occurred, inspect error.serverResponse
@@ -194,7 +197,7 @@ function useProvideAuth () {
             .then(downloadURL => {
               console.log('file available at:', downloadURL)
               addPhotoRef(user, downloadURL, affiliateId)
-              urlToUplaod = downloadURL;
+              urlToUplaod = downloadURL
               return downloadURL
             })
             .then(url => {
@@ -204,8 +207,7 @@ function useProvideAuth () {
                 })
                 .then(() => {
                   console.log('UPDATE SUCESSFULL')
-                  resolve(urlToUplaod);
-                  
+                  resolve(urlToUplaod)
                 })
                 .catch(err => console.log('update failed', err))
             })
@@ -239,8 +241,26 @@ function useProvideAuth () {
       })
   }
 
+  const signInAnonimously = () => {
+    return new Promise(() => {
+      firebase
+        .auth()
+        .signInAnonymously()
+        .then(() => {
+          console.log('USER IS SIGNIN')
+          return { isUserSignedup: true }
+        })
+        .catch(error => {
+          const errorCode = error.code
+          const errorMessage = error.message
+          return { isUserSignedup: false, msg: errorMessage, code: errorCode }
+        })
+    })
+  }
+
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      console.log('user:', user)
       if (user) {
         setUser(user)
       } else {
@@ -256,7 +276,8 @@ function useProvideAuth () {
     uploadProfilePictureToStorage,
     addPhotoRef,
     finishSignup_inWithMagicLink,
-    getAffiliate
+    getAffiliate,
+    signInAnonimously
   }
 }
 

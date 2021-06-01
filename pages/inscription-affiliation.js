@@ -6,6 +6,7 @@ import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
 import NProgress from 'nprogress';
 import Snackbar from '@material-ui/core/Snackbar'
+import Loader from 'react-loader-spinner'
 import 'nprogress/nprogress.css';
 
 /*
@@ -27,6 +28,7 @@ export default function Affiliation () {
   const [affiliateId, setAffiliateId] = useState('')
   const [phone, setPhone] = useState('')
   const [affiliateInfo, setAffiliateInfo] = useState(null)
+  const [showSpinner, setShowSpinner] = useState(false)
   const [state, setState] = useState({
     vertical: 'top',
     horizontal: 'center'
@@ -82,12 +84,29 @@ export default function Affiliation () {
     }
   }
 
+  const createAccountv2 = () => {
+    setShowSpinner(true)
+    if (selectedFile && name && phone) {
+      return auth.uploadProfilePictureToStorage(
+        selectedFile,
+        auth.user,
+        affiliateId
+      ).then((url) => {
+        setDownloadUrl(url);
+        showCreatedAccount()
+      })
+      .catch(err => console.log('createAccountv2', err))
+    } else {
+      checkAndShowRightErrMsg(selectedFile, name, phone)
+    }
+  }
+
   const showCreatedAccount = () => {
     auth.getAffiliate(affiliateId).then(result => {
       if (result.exists) {
         setAffiliateInfo(result.doc)
       }
-      NProgress.done()
+      setShowSpinner(false);
     })
   }
 
@@ -145,7 +164,7 @@ export default function Affiliation () {
                   phone.replace(/ /g, '').length < 10 || name.length < 4
                 }
                 className={styles.create_account}
-                onClick={() => createAccount()}
+                onClick={() => createAccountv2()}
               >
                 {' '}
                 <span>Créer mon compte</span>{' '}
@@ -154,6 +173,30 @@ export default function Affiliation () {
             </div>
           </div>
         </section>
+        {showSpinner ? (
+        <div className='loader'>
+          <Loader
+            type='Puff'
+            color='#00BFFF'
+            height={100}
+            width={100}
+            visible={showSpinner}
+          />
+          <style jsx>{`
+            .loader {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          `}</style>
+        </div>
+      ) : null}
       </section>
     )
   }
