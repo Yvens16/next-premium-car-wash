@@ -4,10 +4,12 @@ import { useAuth } from '../firebase/use-auth'
 import Head from 'next/head'
 import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
+import Spinner from 'react-bootstrap/Spinner'
 import NProgress from 'nprogress';
 import Snackbar from '@material-ui/core/Snackbar'
 import Loader from 'react-loader-spinner'
 import 'nprogress/nprogress.css';
+
 
 /*
 TODO: Logique to sign up, with email
@@ -90,7 +92,9 @@ export default function Affiliation () {
       return auth.uploadProfilePictureToStorage(
         selectedFile,
         auth.user,
-        affiliateId
+        affiliateId,
+        name,
+        phone
       ).then((url) => {
         setDownloadUrl(url);
         showCreatedAccount()
@@ -175,13 +179,7 @@ export default function Affiliation () {
         </section>
         {showSpinner ? (
         <div className='loader'>
-          <Loader
-            type='Puff'
-            color='#00BFFF'
-            height={100}
-            width={100}
-            visible={showSpinner}
-          />
+          <Spinner animation="grow" />
           <style jsx>{`
             .loader {
               position: absolute;

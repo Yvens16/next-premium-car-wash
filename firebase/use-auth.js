@@ -129,7 +129,36 @@ function useProvideAuth () {
     })
   }
 
+  const registerUserData = (user, name, phoneNumber, affiliateId) => {
+    database
+    .collection('users')
+    .doc(user.uid)
+    .set({
+      name,
+      phoneNumber,
+      affiliateId
+    })
+    .then(() => {
+      database
+      .collection('affiliates')
+      .doc(affiliateId)
+      .set({
+        name,
+        phoneNumber,
+        userUid: user.uid
+      })
+    })
+    .catch(error => {
+      console.log('code', error.code)
+      console.log('error', error)
+      throw new Error(error)
+    })
+  }
+
   const addPhotoRef = (user, photoUrl, affiliateId) => {
+    console.log('ADD PHOTO REF user:', user)
+    console.log('ADD PHOTO REF photoUrl:', photoUrl)
+    console.log('ADD PHOTO REF affiliateId:', affiliateId)
     database
       .collection('users')
       .doc(user.uid)
@@ -147,7 +176,7 @@ function useProvideAuth () {
       .then(() => console.log('PhotoUrl added to affilaite'))
   }
 
-  const uploadProfilePictureToStorage = (file, user, affiliateId) => {
+  const uploadProfilePictureToStorage = (file, user, affiliateId, username, phone) => {
     const storageRef = FirebaseStorage.ref()
     const name = file.name.replace(/.*\./, `${affiliateId}.`)
     const profilePictureRef = storageRef.child(name)
@@ -194,11 +223,13 @@ function useProvideAuth () {
         () => {
           uploadTask.snapshot.ref
             .getDownloadURL()
+            .then((downloadURL) => {
+              registerUserData(user, username, phone, affiliateId)
+              return downloadURL
+            })
             .then(downloadURL => {
               console.log('file available at:', downloadURL)
               addPhotoRef(user, downloadURL, affiliateId)
-              urlToUplaod = downloadURL
-              return downloadURL
             })
             .then(url => {
               user
@@ -277,7 +308,8 @@ function useProvideAuth () {
     addPhotoRef,
     finishSignup_inWithMagicLink,
     getAffiliate,
-    signInAnonimously
+    signInAnonimously,
+    registerUserData
   }
 }
 

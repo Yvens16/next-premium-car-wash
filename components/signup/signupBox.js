@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Signup.module.scss'
 const Snackbar = dynamic(() =>
-  import('@material-ui/core/Snackbar').then(Snackbar => Snackbar)
+import('@material-ui/core/Snackbar').then(Snackbar => Snackbar)
 )
 import { useAuth } from '../../firebase/use-auth'
 import { useRouter } from 'next/router'
 import Loader from 'react-loader-spinner'
+import Spinner from 'react-bootstrap/Spinner'
 
 export default function Signup () {
   const auth = useAuth()
@@ -137,16 +138,18 @@ export default function Signup () {
         <p>* sur votre compte bancaire si vous n'avez pas lydia</p>
       </div>
       {showSpinner ? (
-        <div className='loader'>
-          <Loader
+        <div className='loader_yve'>
+          {/* <Loader
             type='Puff'
             color='#00BFFF'
             height={100}
             width={100}
             visible={showSpinner}
-          />
+          /> */}
+          {/* <Spinner animation="border" variant="primary" /> */}
+          <Spinner animation="grow" />
           <style jsx>{`
-            .loader {
+            .loader_yve {
               position: absolute;
               top: 50%;
               left: 50%;
