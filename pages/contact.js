@@ -100,7 +100,7 @@ export default function Contact () {
               value={email}
               type='email'
               name='email'
-              placeholder='Jean.dujardin@gmail.com'
+              placeholder='jean.dujardin@gmail.com'
               id='email'
               onChange={e => setEmail(e.target.value)}
             />
