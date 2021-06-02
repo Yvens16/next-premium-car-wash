@@ -55,7 +55,7 @@ export default function Affiliate () {
         <section className={styles.affiliate_title}>
           <h1>
             {affiliateData.name} vous invite à faire nettoyer l'intérieur de votre
-            voiture à domicile par nos soins
+            voiture à domicile
           </h1>
           <p>Réservez à partir de cette page</p>
           <p>
