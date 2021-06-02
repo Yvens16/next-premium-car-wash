@@ -78,7 +78,7 @@ export default function Forfait ({
           }`}
           onClick={() => selectForfait('bronze')}
         >
-          <p>Forfait Bronze</p>
+          Forfait Bronze
         </div>
         <div
           className={`${styles.selector} ${
@@ -86,7 +86,7 @@ export default function Forfait ({
           }`}
           onClick={() => selectForfait('argent')}
         >
-          <p>Forfait Argent</p>
+          Forfait Argent
         </div>
         <div
           className={`${styles.selector} ${
@@ -94,7 +94,7 @@ export default function Forfait ({
           }`}
           onClick={() => selectForfait('or')}
         >
-          <p>Forfait Or</p>
+          Forfait Or
         </div>
       </div>
       <div className={styles.description}>

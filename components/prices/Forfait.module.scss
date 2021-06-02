@@ -28,6 +28,10 @@
 			font-size: 12px;
       width: 30%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 12px;
 		}
 		.selected {
 			background: #00feca;

@@ -4,8 +4,8 @@ import styles from './Footer.module.scss'
 
 export default function Footer () {
   return (
-    <footer className={styles.footer}>
-      <section className={styles.top}>
+    <footer>
+      <section className="footer_top">
         <Image
           src='/svg/carwashlogominified.svg'
           width='40'
@@ -15,7 +15,7 @@ export default function Footer () {
         ></Image>
         <h2>Préparation et esthétique automobile</h2>
       </section>
-      <section className={styles.middle}>
+      <section className="footer_middle">
         <Link href='/'>
           <a>Accueil</a>
         </Link>
@@ -23,7 +23,7 @@ export default function Footer () {
           <a>Nous Contacter</a>
         </Link>
       </section>
-      <section className={styles.bottom}>
+      <section className="footer_bottom">
         Copyright ® Premium Car Wash 2019 - Tous droits réservés
       </section>
     </footer>
