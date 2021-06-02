@@ -41,10 +41,12 @@ export default function Affiliation () {
   const [errorMsg, setErrorMsg] = useState(false)
   const { vertical, horizontal } = state
   const onFileChange = e => {
-    setSelectedFile({
-      selectedFile: e.target.files[0],
-      selectedFileUrl: URL.createObjectURL(e.target.files[0])
-    })
+    if (e.target.files.length) {
+      setSelectedFile({
+        selectedFile: e.target.files[0],
+        selectedFileUrl: URL.createObjectURL(e.target.files[0])
+      })
+    }
   }
   const createAffiliateId = () => {
     setAffiliateId(`${name.replace(/ /g, '').toLowerCase()}_${nanoid(4)}`)
@@ -165,7 +167,7 @@ export default function Affiliation () {
               />
               <button
                 disabled={
-                  phone.replace(/ /g, '').length < 10 || name.length < 4
+                  phone.replace(/ /g, '').length < 10 || name.length < 4 || !selectedFile
                 }
                 className={styles.create_account}
                 onClick={() => createAccountv2()}
