@@ -36,7 +36,7 @@ export default function Affiliate () {
   const Signup = () => {
     return (
       <main className={styles.signup}>
-        <h1>Il semblerait que le lien que vous ayez reçu ne soit pas le bon</h1>
+        <h2>Il semblerait que le lien que vous ayez reçu ne soit pas le bon</h2>
         <p>
           Mais n'hésitez pas à ajouter votre email pour créer votre propre lien
         </p>

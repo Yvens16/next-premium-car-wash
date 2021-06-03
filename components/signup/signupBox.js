@@ -86,8 +86,7 @@ export default function Signup () {
   }
 
   useEffect(() => {
-    console.log('UESEFFECT IN COMPOENNT', auth.user)
-    if (auth.user) {
+    if (auth.user && router.pathname === 'remerciements') {
       router.push({ pathname: '/inscription-affiliation' })
     }
   }, [auth.user])

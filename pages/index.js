@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 const MobileHome = dynamic(() => import('components/home/MobileHome'))
 const DesktopHome = dynamic(() => import('components/home/DesktopHome'))
-// const Signup = dynamic(() => import('components/signup/signupBox'))
+const Signup = dynamic(() => import('components/signup/signupBox'))
 // import Signup from 'components/signup/signupBox'
 
 export default function Home () {
@@ -27,7 +27,7 @@ export default function Home () {
         <div className={styles.home_hero}>
           <MobileHome/>
           <DesktopHome/>
-          {/* <Signup /> */}
+          <Signup />
         </div>
       </main>
     </div>
