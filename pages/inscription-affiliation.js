@@ -66,28 +66,6 @@ export default function Affiliation () {
     setOpen(true);
   }
 
-  const createAccount = () => {
-    if (selectedFile && name && phone) {
-      NProgress.start()
-      return auth
-        .finishSignup_inWithMagicLink(name, phone, affiliateId)
-        .then(res => {
-          return auth.uploadProfilePictureToStorage(
-            selectedFile,
-            res.user,
-            res.affiliateId
-          )
-        })
-        .then((url) => {
-          setDownloadUrl(url);
-          showCreatedAccount()
-        })
-        .catch(err => console.log('createAccount', err))
-    } else {
-      checkAndShowRightErrMsg(selectedFile, name, phone)
-    }
-  }
-
   const createAccountv2 = () => {
     setShowSpinner(true)
     if (selectedFile && name && phone) {
@@ -269,6 +247,7 @@ export default function Affiliation () {
       setOpen(false)
     }
   }
+
   return (
     <main>
       <Head>

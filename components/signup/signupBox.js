@@ -86,7 +86,7 @@ export default function Signup () {
   }
 
   useEffect(() => {
-    if (auth.user && router.pathname === 'remerciements') {
+    if (auth.user && router.pathname === '/remerciements') {
       router.push({ pathname: '/inscription-affiliation' })
     }
   }, [auth.user])

@@ -56,81 +56,8 @@ function useProvideAuth () {
     // dynamicLinkDomain: 'example.page.link'
   }
 
-  const signupWithMagicLink = async (
-    email,
-    actionCodeSettings = myactionCodeSettings
-  ) => {
-    try {
-      await firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
-      window.localStorage.setItem('emailForSignIn', email)
-      console.log('window.localStorage: set item', window.localStorage)
-      return true
-    } catch (error) {
-      console.log('error: function', error)
-      var errorCode = error.code
-      var errorMessage = error.message
-      throw new Error(errorCode)
-    }
-  }
-
-  const finishSignup_inWithMagicLink = (name, phone, affiliateId) => {
-    console.log('phone:', phone)
-    let user
-    console.log('location', window.location.href)
-    return new Promise(res => {
-      if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
-        console.log('window.localStorage:', window.localStorage)
-        let email = window.localStorage.getItem('emailForSignIn')
-        if (!email) {
-          email = window.prompt(
-            "Nous avons besoin de votre email pour terminer l'inscription s'il vous plaît"
-          )
-        }
-        firebase
-          .auth()
-          .signInWithEmailLink(email, window.location.href)
-          .then(result => {
-            window.localStorage.removeItem('emailForSignIn')
-            user = result.user
-            firebase.auth().currentUser.updateProfile({
-              displayName: name
-            })
-            return user
-          })
-          .then(user => {
-            database
-              .collection('users')
-              .doc(user.uid)
-              .set({
-                name,
-                phoneNumber: phone,
-                affiliateId
-              })
-            // res(user)
-            return user
-          })
-          .then(user => {
-            database
-              .collection('affiliates')
-              .doc(affiliateId)
-              .set({
-                name,
-                phoneNumber: phone,
-                userUid: user.uid
-              })
-            res({ user, affiliateId })
-          })
-          .catch(error => {
-            console.log('code', error.code)
-            console.log('error', error)
-            throw new Error(error)
-          })
-      }
-    })
-  }
-
   const registerUserData = (user, name, phoneNumber, affiliateId) => {
-    database
+    return database
     .collection('users')
     .doc(user.uid)
     .set({
@@ -139,7 +66,7 @@ function useProvideAuth () {
       affiliateId
     })
     .then(() => {
-      database
+      return database
       .collection('affiliates')
       .doc(affiliateId)
       .set({
@@ -156,19 +83,12 @@ function useProvideAuth () {
   }
 
   const addPhotoRef = (user, photoUrl, affiliateId) => {
-    console.log('ADD PHOTO REF user:', user)
-    console.log('ADD PHOTO REF photoUrl:', photoUrl)
-    console.log('ADD PHOTO REF affiliateId:', affiliateId)
     database
       .collection('users')
       .doc(user.uid)
       .set({ photoUrl }, { merge: true })
       .then(() => {
-        console.log(
-          'PhotoUrl added to users, now adding to affiliates',
-          affiliateId
-        )
-        database
+        return database
           .collection('affiliates')
           .doc(affiliateId)
           .set({ photoUrl }, { merge: true })
@@ -224,12 +144,11 @@ function useProvideAuth () {
           uploadTask.snapshot.ref
             .getDownloadURL()
             .then((downloadURL) => {
-              registerUserData(user, username, phone, affiliateId)
-              return downloadURL
+              urlToUplaod = downloadURL;
+              return registerUserData(user, username, phone, affiliateId)
             })
-            .then(downloadURL => {
-              console.log('file available at:', downloadURL)
-              addPhotoRef(user, downloadURL, affiliateId)
+            .then(() => {
+              addPhotoRef(user, urlToUplaod, affiliateId)
             })
             .then(url => {
               user
@@ -237,7 +156,6 @@ function useProvideAuth () {
                   photoURL: url
                 })
                 .then(() => {
-                  console.log('UPDATE SUCESSFULL')
                   resolve(urlToUplaod)
                 })
                 .catch(err => console.log('update failed', err))
@@ -278,7 +196,6 @@ function useProvideAuth () {
         .auth()
         .signInAnonymously()
         .then(() => {
-          console.log('USER IS SIGNIN')
           return { isUserSignedup: true }
         })
         .catch(error => {
@@ -291,7 +208,6 @@ function useProvideAuth () {
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-      console.log('user:', user)
       if (user) {
         setUser(user)
       } else {
@@ -303,10 +219,8 @@ function useProvideAuth () {
 
   return {
     user,
-    signupWithMagicLink,
     uploadProfilePictureToStorage,
     addPhotoRef,
-    finishSignup_inWithMagicLink,
     getAffiliate,
     signInAnonimously,
     registerUserData
