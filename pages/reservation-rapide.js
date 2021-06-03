@@ -31,7 +31,7 @@ export default function RapidReservation () {
           alt='logo'
         />
         <ReactPlayer
-          url='/videos/inside_only_tiny.mp4'
+          url='https://youtu.be/C8V1Qf77eo0'
           // playing={true}
           muted={true}
           width={300}
