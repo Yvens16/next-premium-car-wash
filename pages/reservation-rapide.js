@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import Image from 'next/image'
+import { firebaseAnalytics } from '../firebase/firebase';
 import styles from '../styles/rapid_reservation.module.scss'
 
 export default function RapidReservation () {
@@ -9,6 +10,13 @@ export default function RapidReservation () {
   console.log(
     typeof window != 'undefined' && window.matchMedia('min-width: 600')
   )
+
+  const checkPrice = (e) => {
+    setprice(e.target.value)
+    if (process.env.NODE_ENV === 'production') {
+      firebaseAnalytics().logEvent('select_price_rapid_reservation', {name: e.target.value})
+    }
+  }
   return (
     <main>
       <Head>
@@ -47,40 +55,40 @@ export default function RapidReservation () {
       </section>
       <section className={styles.offer}>
         <h1>
-          Choisissez votre prix, celui qui vous semble le plus raisonnable
+        Payez le prix qui vous semble le plus raisonnable
         </h1>
         <p>
           Pour une remise à neuf de l'intérieur de votre voiture + un traitement
-          anti odeur
+          anti odeur à domicile
         </p>
         <div className={styles.inputs}>
-          <div>
+          <div className={price === '55€' ? styles.selected : null}>
             <input
               type='radio'
               id='subscribeNews'
               name='subscribe'
               value='55€'
-              onClick={e => setprice(e.target.value)}
+              onClick={e => checkPrice(e)}
             />
             <label htmlFor='subscribeNews'>55€</label>
           </div>
-          <div>
+          <div className={price === '60€' ? styles.selected : null}>
             <input
               type='radio'
               id='subscribeNews'
               name='subscribe'
               value='60€'
-              onClick={e => setprice(e.target.value)}
+              onClick={e => checkPrice(e)}
             />
             <label htmlFor='subscribeNews'>60€</label>
           </div>
-          <div>
+          <div className={price === '70€' ? styles.selected : null}>
             <input
               type='radio'
               id='subscribeNews'
               name='subscribe'
               value='70€'
-              onClick={e => setprice(e.target.value)}
+              onClick={e => checkPrice(e)}
             />
             <label htmlFor='subscribeNews'>70€</label>
           </div>
