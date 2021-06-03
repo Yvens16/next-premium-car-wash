@@ -32,7 +32,7 @@ export default function RapidReservation () {
         />
         <ReactPlayer
           url='/videos/inside_only_tiny.mp4'
-          playing={true}
+          // playing={true}
           width={300}
           controls
           config={{
