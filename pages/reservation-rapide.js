@@ -31,9 +31,9 @@ export default function RapidReservation () {
           alt='logo'
         />
         <ReactPlayer
-          url='https://youtu.be/C8V1Qf77eo0'
+          url='https://res.cloudinary.com/djwtktmre/video/upload/v1622724614/inside_only_tiny.mp4'
           // playing={true}
-          muted={true}
+          // muted={true}
           width={300}
           controls
           config={{
