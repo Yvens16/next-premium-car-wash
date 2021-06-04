@@ -7,9 +7,9 @@ import styles from '../styles/rapid_reservation.module.scss'
 
 export default function RapidReservation () {
   const [price, setprice] = useState(null)
-  console.log(
-    typeof window != 'undefined' && window.matchMedia('min-width: 600')
-  )
+  // console.log(
+  //   typeof window != 'undefined' && window.matchMedia('min-width: 600')
+  // )
 
   const checkPrice = (e) => {
     setprice(e.target.value)
@@ -17,6 +17,13 @@ export default function RapidReservation () {
       firebaseAnalytics().logEvent('select_price_rapid_reservation', {name: e.target.value})
     }
   }
+
+  const logPlayEvent = () => {
+    if (process.env.NODE_ENV === 'production') {
+      firebaseAnalytics().logEvent('video_playing')
+    }
+  }
+
   return (
     <main>
       <Head>
@@ -39,6 +46,7 @@ export default function RapidReservation () {
           alt='logo'
         />
         <ReactPlayer
+          onPlay={() => logPlayEvent()}
           url='https://res.cloudinary.com/djwtktmre/video/upload/v1622724614/inside_only_tiny.mp4'
           // playing={true}
           // muted={true}
