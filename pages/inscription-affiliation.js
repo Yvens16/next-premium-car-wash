@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import { nanoid } from 'nanoid'
 import { useAuth } from '../firebase/use-auth'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styles from '../styles/Affiliation.module.scss'
 import Image from 'next/image'
 import Spinner from 'react-bootstrap/Spinner'
-import NProgress from 'nprogress';
+// import NProgress from 'nprogress';
 import Snackbar from '@material-ui/core/Snackbar'
-import Loader from 'react-loader-spinner'
+// import Loader from 'react-loader-spinner'
 import 'nprogress/nprogress.css';
 
 
@@ -21,6 +22,8 @@ TODO: Logique to sign up, with email
 // https://stackoverflow.com/users/3732271/akrun
 export default function Affiliation () {
   const auth = useAuth()
+  const router = useRouter();
+  const [mail, setMail] = useState('');
   const [{ selectedFile, selectedFileUrl }, setSelectedFile] = useState({
     selectedFile: null,
     selectedFileUrl: null
@@ -74,7 +77,8 @@ export default function Affiliation () {
         auth.user,
         affiliateId,
         name,
-        phone
+        phone,
+        mail
       ).then((url) => {
         setShowSpinner(false);
         setDownloadUrl(url);
@@ -247,6 +251,10 @@ export default function Affiliation () {
       setOpen(false)
     }
   }
+
+  useEffect(() => {
+    setMail(router.query.email);
+  }, [])
 
   return (
     <main>

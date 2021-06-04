@@ -56,14 +56,15 @@ function useProvideAuth () {
     // dynamicLinkDomain: 'example.page.link'
   }
 
-  const registerUserData = (user, name, phoneNumber, affiliateId) => {
+  const registerUserData = (user, name, phoneNumber, affiliateId, email) => {
     return database
     .collection('users')
     .doc(user.uid)
     .set({
       name,
       phoneNumber,
-      affiliateId
+      affiliateId,
+      email
     })
     .then(() => {
       return database
@@ -72,7 +73,8 @@ function useProvideAuth () {
       .set({
         name,
         phoneNumber,
-        userUid: user.uid
+        userUid: user.uid,
+        email
       })
     })
     .catch(error => {
@@ -93,10 +95,13 @@ function useProvideAuth () {
           .doc(affiliateId)
           .set({ photoUrl }, { merge: true })
       })
-      .then(() => console.log('PhotoUrl added to affilaite'))
+      .then(() => {
+        console.log('PhotoUrl added to affilaite')
+        return signOut()
+      })
   }
 
-  const uploadProfilePictureToStorage = (file, user, affiliateId, username, phone) => {
+  const uploadProfilePictureToStorage = (file, user, affiliateId, username, phone, email) => {
     const storageRef = FirebaseStorage.ref()
     const name = file.name.replace(/.*\./, `${affiliateId}.`)
     const profilePictureRef = storageRef.child(name)
@@ -145,7 +150,7 @@ function useProvideAuth () {
             .getDownloadURL()
             .then((downloadURL) => {
               urlToUplaod = downloadURL;
-              return registerUserData(user, username, phone, affiliateId)
+              return registerUserData(user, username, phone, affiliateId, email)
             })
             .then(() => {
               addPhotoRef(user, urlToUplaod, affiliateId)
@@ -190,6 +195,11 @@ function useProvideAuth () {
       })
   }
 
+
+  const signOut = () => {
+    return firebase.auth().signOut();
+  }
+
   const signInAnonimously = () => {
     return new Promise(() => {
       firebase
@@ -223,7 +233,8 @@ function useProvideAuth () {
     addPhotoRef,
     getAffiliate,
     signInAnonimously,
-    registerUserData
+    registerUserData,
+    signOut
   }
 }
 

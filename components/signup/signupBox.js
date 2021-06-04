@@ -14,6 +14,7 @@ export default function Signup () {
   const auth = useAuth()
   const router = useRouter()
   const [mail, setmail] = useState('')
+  const [emailToRoute, setEmailToRoute] = useState('');
   const [open, setOpen] = useState(false)
   const [error, setError] = useState(false)
   const [errorMsg, setErrorMsg] = useState(false)
@@ -85,9 +86,16 @@ export default function Signup () {
       })
   }
 
+  const setEmailValue = (e) => {
+    setEmailToRoute(e.target.value);
+    setmail(e.target.value);
+  }
+
   useEffect(() => {
-    if (auth.user && router.pathname === '/remerciements') {
-      router.push({ pathname: '/inscription-affiliation' })
+    if (auth.user) {
+      router.push({ pathname: '/inscription-affiliation', query: {
+        email: emailToRoute,
+      }})
     }
   }, [auth.user])
 
@@ -125,7 +133,7 @@ export default function Signup () {
           name='email_signup'
           id={styles.email_signup}
           value={mail}
-          onChange={e => setmail(e.target.value)}
+          onChange={e => setEmailValue(e)}
         />
         <button onClick={createAccountv2} className={styles.signup_btn}>
           S'inscrire
