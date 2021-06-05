@@ -110,7 +110,7 @@ export default function RapidReservation () {
             href={`https://calendly.com/contact-premiumcarwash/reservation-premium-car-wash-clone?a2=${price}`}
           >
             {' '}
-            Réservez un nettoyage
+            Prendre un rdv
           </a>
         </button>
       </section>
