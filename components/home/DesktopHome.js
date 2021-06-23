@@ -1,12 +1,20 @@
 import Image from 'next/image'
 import styles from 'styles/Home.module.scss'
+import { useRouter } from 'next/router'
 
 export default function DesktopHome () {
+  const router = useRouter()
+  const goToPrices = e => {
+    e.preventDefault()
+    router.push({
+      pathname: '/tarif-nettoyage-voiture-paris',
+    })
+  }
   return (
     <section className={styles.home_hero_desktop}>
       <section className={`${styles.services} ${styles.clean}`}>
         <h1>Nettoyage intérieur de votre voiture à domicile à Paris</h1>
-        <button>Nettoyer ma voiture</button>
+        <button onClick={e => goToPrices(e)}>Nettoyer ma voiture</button>
       </section>
       <section className={styles.ohter_services}>
         <div className={styles.picture_no_dent}>
