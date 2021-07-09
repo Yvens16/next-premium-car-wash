@@ -29,6 +29,19 @@ class MyDocument extends Document {
             }}
           />
           {/* End facebook pixel */}
+          {/* Start Smartlook code */}
+          <script
+            type='text/javascript'
+            dangerouslySetInnerHTML={{
+              __html: `window.smartlook||(function(d) {
+                          var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+                          var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+                          c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+                          })(document);
+                          smartlook('init', 'f425471e25fcbb2c42bc3257c028f61f94e710e0')`
+            }}
+          />
+          {/* End Smartlook code */}
         </Head>
         <body>
           <noscript
