@@ -1,0 +1,70 @@
+{
+	"citadine": {
+    "bronze": {
+      "inter": 35,
+      "exter": 30,
+      "both": 65
+    },
+    "argent": {
+      "inter": 60,
+      "exter": 30,
+      "both": 90
+    },
+    "or": {
+      "inter": 70,
+      "exter": 50,
+      "both": 100
+    }
+	},
+	"berline": {
+    "bronze": {
+      "inter": 45,
+      "exter": 40,
+      "both": 75
+    },
+    "argent": {
+      "inter": 70,
+      "exter": 40,
+      "both": 100
+    },
+    "or": {
+      "inter": 80,
+      "exter": 60,
+      "both": 110
+    }
+	},
+	"routiere": {
+    "bronze": {
+      "inter": 55,
+      "exter": 50,
+      "both": 85
+    },
+    "argent": {
+      "inter": 80,
+      "exter": 50,
+      "both": 110
+    },
+    "or": {
+      "inter": 90,
+      "exter": 70,
+      "both": 120
+    }
+	},
+	"suv": {
+    "bronze": {
+      "inter": 65,
+      "exter": 60,
+      "both": 95
+    },
+    "argent": {
+      "inter": 90,
+      "exter": 60,
+      "both": 120
+    },
+    "or": {
+      "inter": 110,
+      "exter": 80,
+      "both": 140
+    }
+	}
+}

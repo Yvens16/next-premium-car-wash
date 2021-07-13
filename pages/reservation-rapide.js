@@ -7,10 +7,6 @@ import styles from '../styles/rapid_reservation.module.scss'
 
 export default function RapidReservation () {
   const [price, setprice] = useState(null)
-  // console.log(
-  //   typeof window != 'undefined' && window.matchMedia('min-width: 600')
-  // )
-
   const checkPrice = (e) => {
     setprice(e.target.value)
     if (process.env.NODE_ENV === 'production') {

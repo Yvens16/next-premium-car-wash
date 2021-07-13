@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import styles from './Forfait.module.scss'
 import Image from 'next/image'
 
-const forfaitDesc = {
+const forfaitDescInter = {
   bronze: [
     { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
     {
@@ -55,18 +55,59 @@ const forfaitDesc = {
   ]
 }
 
+const forfaitDescExter = {
+  bronze: [
+    { text: 'Lavage carrosserie' },
+    {
+      text: 'Nettoyage jantes'
+    },
+    {
+      text: 'Nettoyage vitres extérieures'
+    }
+  ],
+  argent: [
+    { text: 'Lavage carrosserie' },
+    {
+      text: 'Nettoyage jantes'
+    },
+    {
+      text: 'Nettoyage vitres extérieures'
+    }
+  ],
+  or: [
+    {
+      text: 'Démoustiquage carrosserie'
+    },
+    { text: 'Lavage & lustrant déperlant carrosserie' },
+    {
+      text: 'Nettoyage & décrassage jantes'
+    },
+    {
+      text: 'Nettoyage vitres extérieures'
+    },
+    { text: 'Nettoyage passage de portes' }
+  ]
+}
+
 export default function Forfait ({
   selectForfait,
   selectedForfait,
-  price,
+  priceInter,
+  priceExter,
+  priceInterExter,
   goToDiscount,
   goBack,
-  scrollRef,
+  scrollRef
 }) {
   return (
     <section className={styles.forfait}>
       <div className={styles.go_back} onClick={goBack}>
-        <Image alt='boutton retour' src='/svg/back.svg' width={40} height={40} />
+        <Image
+          alt='boutton retour'
+          src='/svg/back.svg'
+          width={40}
+          height={40}
+        />
       </div>
       <div className={styles.title}>
         <h1>Les Forfaits</h1>
@@ -97,19 +138,62 @@ export default function Forfait ({
           Forfait Or
         </div>
       </div>
-      <div className={styles.description}>
-        {forfaitDesc[selectedForfait].map((el, index) => (
-          <div key={index} className={styles.description_item}>
-            <Image alt='type de service' src={el.url} width={70} height={70} />
-            <p>{el.text}</p>
-          </div>
-        ))}
+      <div className={styles.container}>
+        <h2>Intérieur</h2>
+        <div className={styles.description}>
+          {forfaitDescInter[selectedForfait].map((el, index) => (
+            <div key={index} className={styles.description_item}>
+              {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
+              <p>{el.text}</p>
+            </div>
+          ))}
+        </div>
+        <div ref={scrollRef} className={styles.price}>
+          <p>Prix: {priceInter}€</p>
+        </div>
+        <div className={styles.cta}>
+          <button onClick={() => goToDiscount('inter')}>
+            Voir réduction et réserver
+          </button>
+        </div>
       </div>
-      <div ref={scrollRef} className={styles.price}>
-        <p>Prix: {price}€</p>
+      <div className={styles.container}>
+        <h2>Extérieur</h2>
+        <div className={styles.description}>
+          {forfaitDescExter[selectedForfait].map((el, index) => (
+            <div key={index} className={styles.description_item}>
+              {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
+              <p>{el.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.price}>
+          <p>Prix: {priceExter}€</p>
+        </div>
+        <div className={styles.cta}>
+          <button onClick={() => goToDiscount('exter')}>
+            Voir réduction et réserver
+          </button>
+        </div>
       </div>
-      <div className={styles.cta}>
-        <button onClick={goToDiscount}>Voir réduction et réserver</button>
+      <div className={styles.container}>
+        <h2>Intérieur et Extérieur</h2>
+        <div className={styles.description}>
+          {forfaitDescInter[selectedForfait].map((el, index) => (
+            <div key={index} className={styles.description_item}>
+              {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
+              <p>{el.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.price}>
+          <p>Prix: {priceInterExter}€</p>
+        </div>
+        <div className={styles.cta}>
+          <button onClick={() => goToDiscount('both')}>
+            Voir réduction et réserver
+          </button>
+        </div>
       </div>
     </section>
   )

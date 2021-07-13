@@ -4,20 +4,25 @@ import { firebaseAnalytics } from '../firebase/firebase'
 import CarChoice from '../components/prices/CarChoice'
 import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
-import prices from '../utils/price.json'
+import prices from '../utils/pricev2.json'
 import Head from 'next/head'
 
 export default function Tarifs () {
   const [car, setCar] = useState({})
   const [pageIndex, setPageIndex] = useState(0)
   const [forfait, setForfait] = useState('bronze')
-  const [price, setPrice] = useState()
+  const [priceInter, setPriceInter] = useState()
+  const [priceExter, setPriceExter] = useState()
+  const [priceInterExter, setPriceInterExter] = useState()
+  const [whichDiscountPrice, setWhichDiscountPrice] = useState();
   const [affiliateInfo, setAffiliateInfo]  = useState(null)
   const scrollRef = useRef()
   const addNewCar = newCar => {
     setCar(newCar)
     setForfait('bronze')
-    setPrice(newCar['bronze'])
+    setPriceInter(newCar['bronze']['inter'])
+    setPriceExter(newCar['bronze']['exter'])
+    setPriceInterExter(newCar['bronze']['both'])
     setPageIndex(1)
   }
   const removeCar = index => {
@@ -42,10 +47,13 @@ export default function Tarifs () {
   const selectForfait = selectedForfait => {
     setForfait(selectedForfait)
     scrollRef.current.scrollIntoView({ behavior: 'smooth' })
-    setPrice(car[selectedForfait])
+    setPriceInter(car[selectedForfait]['inter'])
+    setPriceExter(car[selectedForfait]['exter'])
+    setPriceInterExter(car[selectedForfait]['both'])
   }
 
-  const goToDiscount = () => {
+  const goToDiscount = (which) => {
+    setWhichDiscountPrice(which);
     if (process.env.NODE_ENV === 'production') {
       firebaseAnalytics().logEvent('select_forfait', { name: forfait });
     }
@@ -74,12 +82,17 @@ export default function Tarifs () {
       scrollRef={scrollRef}
       selectForfait={selectForfait}
       selectedForfait={forfait}
-      price={price}
+      priceInter={priceInter}
       goToDiscount={goToDiscount}
       goBack={goBack}
+      priceExter={priceExter}
+      priceInterExter={priceInterExter}
     />
   )
-  let discountComponent = <Discount price={price} goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent}/>
+  let discountComponent = <Discount
+  priceInter={priceInter} 
+  priceExter={priceExter} priceInterExter={priceInterExter}
+  goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent} whichDiscountPrice={whichDiscountPrice}/>
   return (
     <main>
       {console.log(affiliateInfo)}

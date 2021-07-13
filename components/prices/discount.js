@@ -2,12 +2,36 @@ import styles from './Discount.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent }) {
-  console.log('price:', price)
+export default function discount ({
+  priceInter,
+  priceExter,
+  priceInterExter,
+  goBack,
+  affiliateInfo,
+  logBoughtEvent,
+  whichDiscountPrice
+}) {
+  let price
+  switch (whichDiscountPrice) {
+    case 'inter':
+      price = priceInter
+      break
+    case 'exter':
+      price = priceExter
+      break
+    case 'both':
+      price = priceInterExter
+      break
+  }
   return (
     <section className={styles.discount}>
       <div className={styles.go_back} onClick={goBack}>
-        <Image alt='boutton retour' src='/svg/back.svg' width={40} height={40} />
+        <Image
+          alt='boutton retour'
+          src='/svg/back.svg'
+          width={40}
+          height={40}
+        />
       </div>
       <div className={styles.title}>
         <h1>Plus on est de fou, moins c'est chère</h1>
@@ -31,7 +55,12 @@ export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent
         </div>
         <div className={styles.item}>
           <div className={styles.logo}>
-            <Image alt='groupe de personne' src='/svg/goup_of_people.svg' width={30} height={30} />
+            <Image
+              alt='groupe de personne'
+              src='/svg/goup_of_people.svg'
+              width={30}
+              height={30}
+            />
             <span>x2</span>
           </div>
           <div className={styles.discount_number}>
@@ -43,7 +72,12 @@ export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent
         </div>
         <div className={styles.item}>
           <div className={styles.logo}>
-            <Image alt='groupe de personne' src='/svg/goup_of_people.svg' width={30} height={30} />
+            <Image
+              alt='groupe de personne'
+              src='/svg/goup_of_people.svg'
+              width={30}
+              height={30}
+            />
             <span>x3</span>
           </div>
           <div className={styles.discount_number}>
@@ -55,7 +89,12 @@ export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent
         </div>
         <div className={styles.item}>
           <div className={styles.logo}>
-            <Image alt='groupe de personne' src='/svg/goup_of_people.svg' width={30} height={30} />
+            <Image
+              alt='groupe de personne'
+              src='/svg/goup_of_people.svg'
+              width={30}
+              height={30}
+            />
             <span>x4</span>
           </div>
           <div className={styles.discount_number}>
@@ -67,15 +106,14 @@ export default function discount ({ price, goBack, affiliateInfo, logBoughtEvent
         </div>
       </div>
       <div className={styles.cta}>
-        <button onClick={logBoughtEvent}>
-          <a
-            rel="noreferrer"
-            target='_blank'
-            href={`https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture?a3=${affiliateInfo?.name || ''}&a4=+33${affiliateInfo?.phoneNumber || ''}`}
-          >
-            Réserver un nettoyage
-          </a>
-        </button>
+        <a
+          // rel="noreferrer"
+          // target='_blank'
+          href={`https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture?a3=${affiliateInfo?.name ||
+            ''}&a4=+33${affiliateInfo?.phoneNumber || ''}`}
+        >
+          <button onClick={logBoughtEvent}>Réserver un nettoyage</button>
+        </a>
       </div>
     </section>
   )
