@@ -8,36 +8,48 @@ export default function CarChoice({ chooseCar }) {
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
     },
-    resize: {
-      width: 150,
-      height: 100,
+    transformations: {
+      resize: {
+        type: 'scale',
+        width: 150,
+        height: 100,
+      }
     }
   });
   const berline = buildUrl('Premium car Wash/berline_compact', {
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
     },
-    resize: {
-      width: 200,
-      height: 150,
+    transformations: {
+      resize: {
+        type: 'scale',
+        width: 200,
+        height: 150,
+      }
     }
   });
   const routiere = buildUrl('Premium car Wash/petite_routiere', {
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
     },
-    resize: {
-      width: 200,
-      height: 150,
+    transformations: {
+      resize: {
+        type: 'scale',
+        width: 200,
+        height: 150,
+      }
     }
   });
   const suv = buildUrl('Premium car Wash/grosse_routiere', {
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
     },
-    resize: {
-      width: 200,
-      height: 150,
+    transformations: {
+      resize: {
+        type: 'scale',
+        width: 200,
+        height: 150,
+      }
     }
   });
   return (
