@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import styles from './Forfait.module.scss'
 import Image from 'next/image'
+import { buildUrl } from 'cloudinary-build-url';
+
 
 const forfaitDescInter = {
   bronze: [
@@ -99,6 +101,42 @@ export default function Forfait ({
   goBack,
   scrollRef
 }) {
+  const testimonial1 = buildUrl('Premium car Wash/testi_stéphanie', {
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
+    },
+    // transformations: {
+    //   resize: {
+    //     type: 'scale',
+    //     width: 800,
+    //     height: 800,
+    //   }
+    // }
+  });
+  const testimonial2 = buildUrl('Premium car Wash/testi_pascal', {
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
+    },
+    // transformations: {
+    //   resize: {
+    //     type: 'scale',
+    //     width: 800,
+    //     height: 800,
+    //   }
+    // }
+  });
+  const testimonial3 = buildUrl('Premium car Wash/testi_felix', {
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME,
+    },
+    // transformations: {
+    //   resize: {
+    //     type: 'scale',
+    //     width: 800,
+    //     height: 800,
+    //   }
+    // }
+  });
   return (
     <section className={styles.forfait}>
       <div className={styles.go_back} onClick={goBack}>
@@ -155,6 +193,9 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('inter')}>
             Voir réduction et réserver
           </button>
+          <a href="https://www.google.com/search?q=premium-car-wash-taverny&oq=premium-car-wash-taverny&aqs=chrome..69i57.355j0j9&sourceid=chrome&ie=UTF-8">
+            <Image alt='Routière' src={testimonial1} width='300' height='50'/>
+          </a>
         </div>
       </div>
       <div className={styles.container}>
@@ -174,18 +215,21 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('exter')}>
             Voir réduction et réserver
           </button>
+          <a href="https://www.google.com/search?q=premium-car-wash-taverny&oq=premium-car-wash-taverny&aqs=chrome..69i57.355j0j9&sourceid=chrome&ie=UTF-8">
+            <Image alt='Routière' src={testimonial2} width='300' height='50'/>
+          </a>
         </div>
       </div>
       <div className={styles.container}>
         <h2>Intérieur et Extérieur</h2>
-        <div className={styles.description}>
+        {/* <div className={styles.description}>
           {forfaitDescInter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
-              {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
+              <Image alt='type de service' src={el.url} width={70} height={70} />
               <p>{el.text}</p>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className={styles.price}>
           <p>Prix: {priceInterExter}€</p>
         </div>
@@ -193,6 +237,9 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('both')}>
             Voir réduction et réserver
           </button>
+          <a href="https://www.google.com/search?q=premium-car-wash-taverny&oq=premium-car-wash-taverny&aqs=chrome..69i57.355j0j9&sourceid=chrome&ie=UTF-8">
+            <Image alt='Routière' src={testimonial3} width='300' height='50'/>
+          </a>
         </div>
       </div>
     </section>
