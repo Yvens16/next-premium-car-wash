@@ -178,14 +178,14 @@ export default function Forfait ({
       </div>
       <div className={styles.container}>
         <h2>Intérieur et Extérieur</h2>
-        <div className={styles.description}>
+        {/* <div className={styles.description}>
           {forfaitDescInter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
-              {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
+              <Image alt='type de service' src={el.url} width={70} height={70} />
               <p>{el.text}</p>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className={styles.price}>
           <p>Prix: {priceInterExter}€</p>
         </div>
