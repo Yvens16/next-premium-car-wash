@@ -78,7 +78,17 @@
   }
   .cta {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 80%;
+      margin: 0 auto;
+    }
     button {
+      margin-top: 5px;
       font-size: 16px;
       border-radius: 8px;
       outline: none;

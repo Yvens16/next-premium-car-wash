@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import 'tailwindcss/tailwind.css'
 import styles from './Forfait.module.scss'
 import Image from 'next/image'
 
@@ -110,7 +111,12 @@ export default function Forfait ({
         />
       </div>
       <div className={styles.title}>
-        <h1>Les Forfaits</h1>
+        <h1 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+          Les Forfaits
+        </h1>
+        <h3 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black pb-2 text-center'>
+          Intervention à domicile
+        </h3>
       </div>
       <div className={styles.select_forfait}>
         <div
@@ -139,7 +145,9 @@ export default function Forfait ({
         </div>
       </div>
       <div className={styles.container}>
-        <h2>Intérieur</h2>
+        <h2 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l'>
+          Intérieur
+        </h2>
         <div className={styles.description}>
           {forfaitDescInter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
@@ -153,12 +161,33 @@ export default function Forfait ({
         </div>
         <div className={styles.cta}>
           <button onClick={() => goToDiscount('inter')}>
-            Voir réduction et réserver
+            Voir réductions et réserver
           </button>
+          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
+            <button>
+              Voir photos clients
+            </button>
+          </a>
+        </div>
+        <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
+          <div className='text-color f-f-l'>
+            <h1 className='text-red-600 text-base lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+              "Prestation réalisée à domicile, véhicule impeccable et l'odeur
+              tout simplement agréable. Excellent accueil. Je recommande.""
+            </h1>
+            <a
+              href='https://bit.ly/témoignages_pcw'
+              className='text-teal text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center pt-5 lg:pt-20'
+            >
+              <h1>- Stéphanie Losse</h1>
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.container}>
-        <h2>Extérieur</h2>
+        <h2 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l'>
+          Extérieur
+        </h2>
         <div className={styles.description}>
           {forfaitDescExter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
@@ -172,12 +201,33 @@ export default function Forfait ({
         </div>
         <div className={styles.cta}>
           <button onClick={() => goToDiscount('exter')}>
-            Voir réduction et réserver
+            Voir réductions et réserver
           </button>
+          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
+            <button>
+              Voir photos clients
+            </button>
+          </a>
+        </div>
+        <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
+          <div className='text-color f-f-l'>
+            <h1 className='text-base lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+              "Très bonne prestation <br /> j'ai récuperer ma voiture très
+              propre. travail de pro. Merci à bientôt."
+            </h1>
+            <a
+              href='https://bit.ly/témoignages_pcw'
+              className='text-teal text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center pt-5 lg:pt-20'
+            >
+              <h1>- Pascal Delbecq</h1>
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.container}>
-        <h2>Intérieur et Extérieur</h2>
+        <h2 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l'>
+          Intérieur et Extérieur
+        </h2>
         {/* <div className={styles.description}>
           {forfaitDescInter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
@@ -191,8 +241,27 @@ export default function Forfait ({
         </div>
         <div className={styles.cta}>
           <button onClick={() => goToDiscount('both')}>
-            Voir réduction et réserver
+            Voir réductions et réserver
           </button>
+          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
+            <button>
+              Voir photos clients
+            </button>
+          </a>
+        </div>
+        <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
+          <div className='text-color f-f-l'>
+            <h1 className='text-gray-600 text-base tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+              "Très bonne prestation, voiture impeccable. Personne agréable et
+              sympathique,. Je vous le conseil."
+            </h1>
+            <a
+              href='https://bit.ly/témoignages_pcw'
+              className='text-teal text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center pt-5 lg:pt-20'
+            >
+              <h1>- Nico Chanat</h1>
+            </a>
+          </div>
         </div>
       </div>
     </section>
