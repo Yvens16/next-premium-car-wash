@@ -115,7 +115,7 @@ export default function Forfait ({
           Les Forfaits
         </h1>
         <h3 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black pb-2 text-center'>
-          Intervention à domicile
+          Intervention à domicile <br/> Val d'oise (95) et Villes limitrophes
         </h3>
       </div>
       <div className={styles.select_forfait}>
