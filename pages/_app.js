@@ -1,9 +1,10 @@
 import { ProvideAuth } from '../firebase/use-auth.js'
 import Navbar from '../components/navigation/navbar'
 import Footer from '../components/footer/footer'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fontsource/roboto';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.scss'
+
 
 
 const Layout = ({ children }) => <div className='layout'>{children}</div>

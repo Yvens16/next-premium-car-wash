@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.3.0",
+    "@heroicons/react": "^1.0.2",
     "@mailchimp/mailchimp_marketing": "^3.0.42",
     "@material-ui/core": "^4.11.4",
     "@sendgrid/mail": "^7.4.4",
@@ -27,6 +28,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-player": "^2.9.0",
     "react-toastify": "^7.0.4",
+    "react-toggle": "^4.1.2",
     "sass": "^1.32.11",
     "ua-parser-js": "^0.7.28",
     "xml-formatter": "^2.4.0"

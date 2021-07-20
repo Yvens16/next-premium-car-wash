@@ -3,7 +3,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      teal: '#00feca'
+      teal: '#00feca',
+      black: '#121212'
     },
     extend: {},
   },
