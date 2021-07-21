@@ -4,22 +4,22 @@ import 'tailwindcss/tailwind.css'
 import 'react-toggle/style.css'
 
 function fastReservation () {
-  const [price, setPrice] = useState(65)
+  const [price, setPrice] = useState(55)
   const [toggles, setToggles] = useState({
-    shampoing: { isToggled: false, value: 15 },
-    suv: { isToggled: false, value: 10 },
-    espace: { isToggled: false, value: 20 },
-    exter: { isToggled: false, value: 30 },
-    sale: { isToggled: false, value: 20 }
+    shampoing: { isToggled: false },
+    suv: { isToggled: false },
+    espace: { isToggled: false },
+    exter: { isToggled: false },
+    sale: { isToggled: false }
   })
 
   const features = [
     {
-      description: 'Détachage de tous les sièges + 15€',
+      description: 'Détachage de tous les sièges + 10€',
       tog: true,
       name: 'shampoing',
       isToggled: false,
-      value: '15'
+      value: '10'
     },
     {
       description: 'Voiture type SUV + 10€',
@@ -43,11 +43,11 @@ function fastReservation () {
       value: '30'
     },
     {
-      description: 'Véhicule très sale + 20€',
+      description: 'Véhicule très sale + 10€',
       tog: true,
       name: 'sale',
       isToggled: false,
-      value: '20'
+      value: '10'
     },
     {
       description: 'Nettoyage vitres intérieures'
