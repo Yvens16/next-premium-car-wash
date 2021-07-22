@@ -8,7 +8,8 @@ module.exports = {
   },
   images: {
     domains: [
-      'res.cloudinary.com'
+      'res.cloudinary.com',
+      'source.unsplash.com'
     ],
     deviceSizes: [273, 322, 367, 500, 640, 750, 828, 900],
   },
