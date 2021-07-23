@@ -9,7 +9,11 @@ export default function Modal ({ isOpen, setOpen }) {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_7kte97b', 'template_ihlvrzg', e.target, 'user_IpgOHNkENq06KN2INx3A8')
+    const serviceId= process.env.NEXT_PUBLIC_EMAILJS_SERVICE
+    const templateId= process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID
+    const userId= process.env.NEXT_PUBLIC_EMAILJS_USERID
+
+    emailjs.sendForm(serviceId, templateId, e.target, userId)
       .then((result) => {
           console.log(result.text);
       }, (error) => {
