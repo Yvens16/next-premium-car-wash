@@ -22,7 +22,7 @@ const ReservationPart = ({price, features, setOpen, handleToggle}) => {
       <div className='w-11/12 xl:w-1/3 lg:w-1/2 sm:w-5/12 md:w-5/12 mx-auto mb-4 max-w-sm shadow rounded-lg border-4 border-gray-700 bg-black'>
         <div className='pt-8 px-8 pb-6'>
           <h4 className='text-2xl text-center text-white pb-3 font-bold'>
-            Nettoyage intérieur et extérieur
+            Nettoyage intérieur de votre voiture
           </h4>
           <p className='text-sm text-center text-white pb-5 leading-normal px-10'>
             Pour une remise à neuf de votre voiture
