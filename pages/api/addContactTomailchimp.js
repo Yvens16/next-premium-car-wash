@@ -10,9 +10,16 @@ mailchimp.setConfig({
 })
   
 async function addContactToList (user) {
+  const nameArray = user.name.split(' ');
   const response = await mailchimp.lists.addListMember(list_id, {
     email_address: user.email,
+    full_name: user.name ? user.name : '',
     status: 'subscribed',
+    merge_fields: {
+      FNAME: user.name ? nameArray[0] : '',
+      LNAME: user.name ? nameArray[1] : '',
+      PHONE: user.phone ? user.phone : ''
+    }
   })
   const contactAdded = response && response.id ? true : false
   return contactAdded
@@ -23,7 +30,9 @@ export default async (req, res) => {
   body = JSON.parse(body)
   console.log('body:', body)
   const subscriberUSer = {
-    email: body.mail
+    email: body.mail,
+    phone: body.phone,
+    name: body.name
   }
   try {
     const response = await addContactToList(subscriberUSer)

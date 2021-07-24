@@ -7,6 +7,7 @@ import Head from 'next/head'
 // import Discount from '../components/prices/discount'
 // import prices from '../utils/pricev2.json'
 import FastReservation from '../components/fastReservation'
+import CouponFunnel from '../components/funnel/couponFunnel';
 
 export default function Tarifs () {
   const [car, setCar] = useState({})
@@ -107,7 +108,8 @@ export default function Tarifs () {
       {/* {pageIndex === 0 ? choiceComponent : null}
       {pageIndex === 1 ? forfaitComponent : null}
       {pageIndex === 2 ? discountComponent : null} */}
-      <FastReservation/>
+      {/* <FastReservation/> */}
+      <CouponFunnel/>
     </main>
   )
 }
