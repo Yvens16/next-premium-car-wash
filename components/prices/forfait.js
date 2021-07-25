@@ -171,9 +171,9 @@ export default function Forfait ({
         </div>
         <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
           <div className='text-color f-f-l'>
-            <h1 className='text-red-600 text-base lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+            <h1 className='text-white text-base lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
               "Prestation réalisée à domicile, véhicule impeccable et l'odeur
-              tout simplement agréable. Excellent accueil. Je recommande.""
+              tout simplement agréable. Excellent accueil. Je recommande."
             </h1>
             <a
               href='https://bit.ly/témoignages_pcw'
@@ -251,7 +251,7 @@ export default function Forfait ({
         </div>
         <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
           <div className='text-color f-f-l'>
-            <h1 className='text-gray-600 text-base tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
+            <h1 className='text-white text-base tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black text-center'>
               "Très bonne prestation, voiture impeccable. Personne agréable et
               sympathique,. Je vous le conseil."
             </h1>

@@ -83,7 +83,7 @@ export default function Navbar () {
             </div>
           </a>
         </Link>
-        <Link href='/tarif-nettoyage-voiture-paris'>
+        <Link href='/tarifs-nettoyage-voiture'>
           <a>
             <div className='mobile-price'>
               <Image src='/svg/euro.svg' width='25' height='25' alt='tarifs' />
@@ -117,6 +117,12 @@ export default function Navbar () {
               <a>Contact</a>
             </Link>
           </div>
+          <div className='contact'>
+            <Link href='/tarifs-nettoyage-voiture'>
+              <a>Prix</a>
+            </Link>
+          </div>
+          
           {/* <div className='affiliation'>
             <Link href='/'>
               <a>Affiliation</a>
