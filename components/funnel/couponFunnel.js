@@ -217,10 +217,10 @@ function couponFunnel () {
       <section className='text-white-600 body-font overflow-hidden'>
         <div className='container px-5 py-16 mx-auto'>
           <div className='lg:w-full mx-auto flex flex-wrap'>
-            <h2 className='lg:hidden text-teal text-lg mb-1 font-medium title-font'>
+            <h1 className='lg:hidden text-teal text-2xl mb-1 font-medium title-font'>
               Vous vous souvenez de cette odeur de voiture neuve ? Ressentez-le
               de nouveau encore, encore... et encore !
-            </h2>
+            </h1>
             <Image
               alt='voiture'
               width='400'
@@ -229,7 +229,7 @@ function couponFunnel () {
               src={url}
             />
             <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
-              <h2 className='hidden lg:block text-teal text-lg mb-1 font-medium title-font'>
+              <h2 className='hidden lg:block text-teal text-2xl mb-1 font-medium title-font'>
                 Vous vous souvenez de cette odeur de voiture neuve ?
                 Ressentez-le de nouveau encore et encore !
               </h2>
@@ -302,8 +302,10 @@ function couponFunnel () {
                 />
               </div>
               <button
+                disabled={mail.length < 3 || phone.length < 9 || name.length < 3}
                 onClick={AddContactToList}
-                className='text-black bg-teal border-0 py-2 px-6 focus:outline-none hover:bg-teal rounded text-lg'
+                className={`text-black bg-teal border-0 py-2 px-6 focus:outline-none hover:bg-teal rounded text-lg 
+                ${mail.length < 3 || phone.length < 9 || name.length < 3 ? 'cursor-not-allowed' : null}`}
               >
                 Obtenir mon coupon
               </button>
@@ -331,18 +333,18 @@ function couponFunnel () {
               ))}
             </dl>
           </div>
-          <section class='text-white-600 body-font'>
-            <div class='container px-5 py-24 mx-auto'>
+          <section className='text-white-600 body-font'>
+            <div className='container px-5 py-24 mx-auto'>
               <h1 className='font-bold text-2xl pb-5'>Ce que disent nos clients</h1>
-              <div class='flex flex-wrap -m-4'>
-                <div class='lg:w-1/3 lg:mb-0 mb-6 p-4 border-2 border-gray-600'>
-                  <div class='h-full text-center text-white'>
-                    <p class='leading-relaxed'>
+              <div className='flex flex-wrap -m-4'>
+                <div className='lg:w-1/3 lg:mb-0 mb-6 p-4 border-2 border-gray-600'>
+                  <div className='h-full text-center text-white'>
+                    <p className='leading-relaxed'>
                       Très bonne prestation, voiture impeccable. Personne
                       agréable et sympathique,. Je vous le conseil.
                     </p>
-                    <span class='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
-                    <h2 class='text-white font-medium title-font tracking-wider text-sm'>
+                    <span className='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
+                    <h2 className='text-white font-medium title-font tracking-wider text-sm'>
                       NICOLAT CHARNAT
                       <a
                         href='https://bit.ly/témoignages_pcw'
@@ -355,15 +357,15 @@ function couponFunnel () {
                     </h2>
                   </div>
                 </div>
-                <div class='lg:w-1/3 lg:mb-0 mb-6 p-4 border-2 border-gray-600'>
-                  <div class='h-full text-center'>
-                    <p class='leading-relaxed text-white'>
+                <div className='lg:w-1/3 lg:mb-0 mb-6 p-4 border-2 border-gray-600'>
+                  <div className='h-full text-center'>
+                    <p className='leading-relaxed text-white'>
                       Prestation réalisée à domicile, véhicule impeccable et
                       l'odeur tout simplement agréable. Excellent accueil. Je
                       recommande.
                     </p>
-                    <span class='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
-                    <h2 class='text-white font-medium title-font tracking-wider text-sm'>
+                    <span className='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
+                    <h2 className='text-white font-medium title-font tracking-wider text-sm'>
                       STÉPHANIE LOSSE
                       <a
                         href='https://bit.ly/témoignages_pcw'
@@ -376,14 +378,14 @@ function couponFunnel () {
                     </h2>
                   </div>
                 </div>
-                <div class='lg:w-1/3 lg:mb-0 p-4 border-2 border-gray-600'>
-                  <div class='h-full text-center text-white'>
-                    <p class='leading-relaxed'>
+                <div className='lg:w-1/3 lg:mb-0 p-4 border-2 border-gray-600'>
+                  <div className='h-full text-center text-white'>
+                    <p className='leading-relaxed'>
                       Très bonne prestation j'ai recuperer ma voiture très
                       propre. travail de pro. Merci à bientôt
                     </p>
-                    <span class='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
-                    <h2 class='text-white font-medium title-font tracking-wider text-sm'>
+                    <span className='inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4'></span>
+                    <h2 className='text-white font-medium title-font tracking-wider text-sm'>
                       PASCAL DELBECQ
                       <a
                         href='https://bit.ly/témoignages_pcw'
