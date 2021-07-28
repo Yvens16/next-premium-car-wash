@@ -10,7 +10,7 @@ function couponFunnel () {
   const [showThankYou, setShowThankYou] = useState(false)
   const downloadImage = () => {
     saveAs(
-      'https://res.cloudinary.com/djwtktmre/image/upload/v1626942326/Premium%20car%20Wash/IMG_8586.heic',
+      'https://res.cloudinary.com/djwtktmre/image/upload/v1627462005/coupon.pdf',
       'coupon_réduction.jpg'
     )
   }
