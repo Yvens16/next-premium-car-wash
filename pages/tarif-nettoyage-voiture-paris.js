@@ -2,12 +2,11 @@ import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { firebaseAnalytics } from '../firebase/firebase'
 import Head from 'next/head'
-// import CarChoice from '../components/prices/CarChoice'
-// import Forfaits from '../components/prices/forfait'
-// import Discount from '../components/prices/discount'
-// import prices from '../utils/pricev2.json'
-import FastReservation from '../components/fastReservation'
-import CouponFunnel from '../components/funnel/couponFunnel';
+import CarChoice from '../components/prices/CarChoice'
+import Forfaits from '../components/prices/forfait'
+import Discount from '../components/prices/discount'
+import prices from '../utils/pricev2.json'
+
 
 export default function Tarifs () {
   const [car, setCar] = useState({})
@@ -78,23 +77,23 @@ export default function Tarifs () {
     }
   }, [])
 
-  // let choiceComponent = <CarChoice chooseCar={chooseCarType} />
-  // let forfaitComponent = (
-  //   <Forfaits
-  //     scrollRef={scrollRef}
-  //     selectForfait={selectForfait}
-  //     selectedForfait={forfait}
-  //     priceInter={priceInter}
-  //     goToDiscount={goToDiscount}
-  //     goBack={goBack}
-  //     priceExter={priceExter}
-  //     priceInterExter={priceInterExter}
-  //   />
-  // )
-  // let discountComponent = <Discount
-  // priceInter={priceInter} 
-  // priceExter={priceExter} priceInterExter={priceInterExter}
-  // goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent} whichDiscountPrice={whichDiscountPrice}/>
+  let choiceComponent = <CarChoice chooseCar={chooseCarType} />
+  let forfaitComponent = (
+    <Forfaits
+      scrollRef={scrollRef}
+      selectForfait={selectForfait}
+      selectedForfait={forfait}
+      priceInter={priceInter}
+      goToDiscount={goToDiscount}
+      goBack={goBack}
+      priceExter={priceExter}
+      priceInterExter={priceInterExter}
+    />
+  )
+  let discountComponent = <Discount
+  priceInter={priceInter} 
+  priceExter={priceExter} priceInterExter={priceInterExter}
+  goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent} whichDiscountPrice={whichDiscountPrice}/>
   return (
     <main>
       {console.log(affiliateInfo)}
@@ -105,11 +104,9 @@ export default function Tarifs () {
           content='Choisissez votre modèle de voiture pour avoir le prix'
         />
       </Head>
-      {/* {pageIndex === 0 ? choiceComponent : null}
+      {pageIndex === 0 ? choiceComponent : null}
       {pageIndex === 1 ? forfaitComponent : null}
-      {pageIndex === 2 ? discountComponent : null} */}
-      {/* <FastReservation/> */}
-      <CouponFunnel/>
+      {pageIndex === 2 ? discountComponent : null}
     </main>
   )
 }
