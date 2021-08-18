@@ -5,13 +5,13 @@ import Head from 'next/head'
 import CarChoice from '../components/prices/CarChoice'
 import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
-import prices from '../utils/pricev2.json'
+import prices from '../utils/pricev3.json'
 
 
 export default function Tarifs () {
   const [car, setCar] = useState({})
   const [pageIndex, setPageIndex] = useState(0)
-  const [forfait, setForfait] = useState('bronze')
+  const [forfait, setForfait] = useState('or')
   const [priceInter, setPriceInter] = useState()
   const [priceExter, setPriceExter] = useState()
   const [priceInterExter, setPriceInterExter] = useState()
@@ -20,10 +20,10 @@ export default function Tarifs () {
   const scrollRef = useRef()
   const addNewCar = newCar => {
     setCar(newCar)
-    setForfait('bronze')
-    setPriceInter(newCar['bronze']['inter'])
-    setPriceExter(newCar['bronze']['exter'])
-    setPriceInterExter(newCar['bronze']['both'])
+    setForfait('or')
+    setPriceInter(newCar['or']['inter'])
+    setPriceExter(newCar['or']['exter'])
+    setPriceInterExter(newCar['or']['both'])
     setPageIndex(1)
   }
   const removeCar = index => {

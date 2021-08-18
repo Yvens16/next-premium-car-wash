@@ -1,0 +1,30 @@
+{
+	"citadine": {
+    "or": {
+      "inter": 45,
+      "exter": 25,
+      "both": 70
+    }
+	},
+	"berline": {
+    "or": {
+      "inter": 55,
+      "exter": 25,
+      "both": 75
+    }
+	},
+	"routiere": {
+    "or": {
+      "inter": 60,
+      "exter": 25,
+      "both": 80
+    }
+	},
+	"suv": {
+    "or": {
+      "inter": 65,
+      "exter": 30,
+      "both": 95
+    }
+	}
+}

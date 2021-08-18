@@ -4,17 +4,17 @@ import styles from './Forfait.module.scss'
 import Image from 'next/image'
 
 const forfaitDescInter = {
-  bronze: [
-    { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
-    {
-      text: 'Aspiration "Express" habitacle et coffre',
-      url: '/images/car_vacuuming.jpeg'
-    },
-    {
-      text: 'Dépoussiérage des plastiques intérieurs',
-      url: '/images/car_interior.jpeg'
-    }
-  ],
+  // bronze: [
+  //   { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
+  //   {
+  //     text: 'Aspiration "Express" habitacle et coffre',
+  //     url: '/images/car_vacuuming.jpeg'
+  //   },
+  //   {
+  //     text: 'Dépoussiérage des plastiques intérieurs',
+  //     url: '/images/car_interior.jpeg'
+  //   }
+  // ],
   argent: [
     { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
     {
@@ -57,15 +57,15 @@ const forfaitDescInter = {
 }
 
 const forfaitDescExter = {
-  bronze: [
-    { text: 'Lavage carrosserie' },
-    {
-      text: 'Nettoyage jantes'
-    },
-    {
-      text: 'Nettoyage vitres extérieures'
-    }
-  ],
+  // bronze: [
+  //   { text: 'Lavage carrosserie' },
+  //   {
+  //     text: 'Nettoyage jantes'
+  //   },
+  //   {
+  //     text: 'Nettoyage vitres extérieures'
+  //   }
+  // ],
   argent: [
     { text: 'Lavage carrosserie' },
     {
@@ -119,22 +119,22 @@ export default function Forfait ({
         </h3>
       </div>
       <div className={styles.select_forfait}>
-        <div
+        {/* <div
           className={`${styles.selector} ${
             selectedForfait === 'bronze' ? styles.selected : ''
           }`}
           onClick={() => selectForfait('bronze')}
         >
           Forfait Bronze
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className={`${styles.selector} ${
             selectedForfait === 'argent' ? styles.selected : ''
           }`}
           onClick={() => selectForfait('argent')}
         >
           Forfait Argent
-        </div>
+        </div> */}
         <div
           className={`${styles.selector} ${
             selectedForfait === 'or' ? styles.selected : ''
@@ -149,6 +149,7 @@ export default function Forfait ({
           Intérieur
         </h2>
         <div className={styles.description}>
+          {console.log('selectedForfait:', selectedForfait)}
           {forfaitDescInter[selectedForfait].map((el, index) => (
             <div key={index} className={styles.description_item}>
               {/* <Image alt='type de service' src={el.url} width={70} height={70} /> */}
