@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { firebaseAnalytics } from '../firebase/firebase'
 import Head from 'next/head'
+import router, { useRouter } from 'next/router'
 // import CarChoice from '../components/prices/CarChoice'
 // import Forfaits from '../components/prices/forfait'
 // import Discount from '../components/prices/discount'
@@ -67,6 +68,7 @@ export default function Tarifs () {
   }
 
   useEffect(() => {
+    router.push('/tarif-nettoyage-voiture-paris')
     if (
       new URLSearchParams(window.location.search).has('invitedby') &&
       new URLSearchParams(window.location.search).has('phoneNumber')
