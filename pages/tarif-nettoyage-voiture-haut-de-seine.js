@@ -88,7 +88,7 @@ export default function Tarifs () {
       goBack={goBack}
       priceExter={priceExter}
       priceInterExter={priceInterExter}
-      ville={"Val d'oise (95) et Villes limitrophes"}
+      ville={"Haut-de-Seine (92)"}
     />
   )
   let discountComponent = <Discount

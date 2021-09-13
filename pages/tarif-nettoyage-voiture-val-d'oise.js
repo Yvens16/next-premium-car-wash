@@ -5,7 +5,7 @@ import Head from 'next/head'
 import CarChoice from '../components/prices/CarChoice'
 import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
-import prices from '../utils/pricev_yvelines.json'
+import prices from '../utils/pricev3.json'
 
 
 export default function Tarifs () {

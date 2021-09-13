@@ -7,7 +7,6 @@ import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
 import prices from '../utils/pricev_yvelines.json'
 
-
 export default function Tarifs () {
   const [car, setCar] = useState({})
   const [pageIndex, setPageIndex] = useState(0)
@@ -88,7 +87,7 @@ export default function Tarifs () {
       goBack={goBack}
       priceExter={priceExter}
       priceInterExter={priceInterExter}
-      ville={"Val d'oise (95) et Villes limitrophes"}
+      ville={"Yvelines (78)"}
     />
   )
   let discountComponent = <Discount
