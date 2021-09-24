@@ -190,7 +190,7 @@ export default function Forfait ({
                 Réserver
               </a>
             </div>
-            <div className='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
+            {/* <div className='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
               <button
                 type='button'
                 className='-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2'
@@ -198,7 +198,7 @@ export default function Forfait ({
                 <span className='sr-only'>Dismiss</span>
                 <XIcon className='h-6 w-6 text-white' aria-hidden='true' />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
