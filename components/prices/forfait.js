@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import 'tailwindcss/tailwind.css'
 import styles from './Forfait.module.scss'
 import Image from 'next/image'
-
+import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
 const forfaitDescInter = {
   // bronze: [
   //   { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
@@ -99,10 +99,109 @@ export default function Forfait ({
   goToDiscount,
   goBack,
   scrollRef,
-  ville,
+  ville
 }) {
+  const [min, setMin] = useState()
+  const [hour, setHour] = useState()
+  const [day, setDay] = useState()
+  useEffect(() => {
+    let countDownDate = new Date('Sep 27, 2021 00:00:00').getTime()
+
+    // Update the count down every 1 second
+    let x = setInterval(function () {
+      // Get today's date and time
+      let now = new Date().getTime()
+  
+      // Find the distance between now and the count down date
+      let distance = countDownDate - now
+  
+      // Time calculations for days, hours, minutes and seconds
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      setDay(days)
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      setHour(hours)
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      setMin(minutes)
+      // let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+  
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x)
+        // document.getElementById('demo').innerHTML = 'EXPIRED'
+      }
+    }, 1000)
+  }, [])
   return (
     <section className={styles.forfait}>
+      <div className='bg-indigo-600'>
+        <div className='max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8'>
+          <div className='flex items-center justify-between flex-wrap'>
+            <div className='w-0 flex-1 flex items-center'>
+              <span className='flex p-2 rounded-lg bg-indigo-800'>
+                <SpeakerphoneIcon
+                  className='h-6 w-6 text-white'
+                  aria-hidden='true'
+                />
+              </span>
+              <p className='ml-3 font-medium text-white truncate'>
+                <span className='md:hidden'>Intér/Extér à 65€ !</span>
+                <span className='hidden md:inline'>
+                  Intérieur et Extérieur à 65€ !
+                </span>
+              </p>
+            </div>
+            <div className='order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto'>
+              <h1 className='text-center mb-3 font-extralight'>Dans le 95 seulement sauf si 2 voitures</h1>
+              <div className='text-center flex w-full items-center justify-center'>
+                <div className='w-24 mx-1 p-2 bg-white text-indigo-600 rounded-lg'>
+                  <div className='font-mono leading-none' x-text='days'>
+                    {day}
+                  </div>
+                  <div className='font-mono uppercase text-sm leading-none'>
+                    Jours
+                  </div>
+                </div>
+                <div className='w-24 mx-1 p-2 bg-white text-indigo-600 rounded-lg'>
+                  <div className='font-mono leading-none' x-text='hours'>
+                    {hour}
+                  </div>
+                  <div className='font-mono uppercase text-sm leading-none'>
+                    Heures
+                  </div>
+                </div>
+                <div className='w-24 mx-1 p-2 bg-white text-indigo-600 rounded-lg'>
+                  <div className='font-mono leading-none' x-text='minutes'>
+                    {min}
+                  </div>
+                  <div className='font-mono uppercase text-sm leading-none'>
+                    Minutes
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto'>
+              <a
+                href='https://calendly.com/contact-premiumcarwash/nettoyage-a-domicile-95-et-alentours-web-clone'
+                target='_blank'
+                className='flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50'
+              >
+                Réserver
+              </a>
+            </div>
+            <div className='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
+              <button
+                type='button'
+                className='-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2'
+              >
+                <span className='sr-only'>Dismiss</span>
+                <XIcon className='h-6 w-6 text-white' aria-hidden='true' />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={styles.go_back} onClick={goBack}>
         <Image
           alt='boutton retour'
@@ -116,7 +215,7 @@ export default function Forfait ({
           Les Forfaits
         </h1>
         <h3 className='text-xl lg:text-xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black pb-2 text-center'>
-          Intervention à domicile <br/> {ville}
+          Intervention à domicile <br /> {ville}
         </h3>
       </div>
       <div className={styles.select_forfait}>
@@ -165,10 +264,11 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('inter')}>
             Voir réductions et réserver
           </button>
-          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
-            <button>
-              Voir photos clients
-            </button>
+          <a
+            href='https://www.instagram.com/premiumcarwash_fr/'
+            target='_blank'
+          >
+            <button>Voir photos clients</button>
           </a>
         </div>
         <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
@@ -205,10 +305,11 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('exter')}>
             Voir réductions et réserver
           </button>
-          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
-            <button>
-              Voir photos clients
-            </button>
+          <a
+            href='https://www.instagram.com/premiumcarwash_fr/'
+            target='_blank'
+          >
+            <button>Voir photos clients</button>
           </a>
         </div>
         <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
@@ -245,10 +346,11 @@ export default function Forfait ({
           <button onClick={() => goToDiscount('both')}>
             Voir réductions et réserver
           </button>
-          <a href="https://www.instagram.com/premiumcarwash_fr/" target='_blank'>
-            <button>
-              Voir photos clients
-            </button>
+          <a
+            href='https://www.instagram.com/premiumcarwash_fr/'
+            target='_blank'
+          >
+            <button>Voir photos clients</button>
           </a>
         </div>
         <div className='mx-auto px-4 xl:px-0 container pt-10 lg:pt-10'>
