@@ -135,7 +135,7 @@ export default function Forfait ({
   }, [])
   return (
     <section className={styles.forfait}>
-      <div className='bg-indigo-600'>
+      {/* <div className='bg-indigo-600'>
         <div className='max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between flex-wrap'>
             <div className='w-0 flex-1 flex items-center'>
@@ -190,7 +190,7 @@ export default function Forfait ({
                 Réserver
               </a>
             </div>
-            {/* <div className='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
+            <div className='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
               <button
                 type='button'
                 className='-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2'
@@ -198,10 +198,10 @@ export default function Forfait ({
                 <span className='sr-only'>Dismiss</span>
                 <XIcon className='h-6 w-6 text-white' aria-hidden='true' />
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.go_back} onClick={goBack}>
         <Image
           alt='boutton retour'

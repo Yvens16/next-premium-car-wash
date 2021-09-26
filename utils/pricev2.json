@@ -11,9 +11,9 @@
       "both": 90
     },
     "or": {
-      "inter": 70,
-      "exter": 50,
-      "both": 100
+      "inter": 50,
+      "exter": 40,
+      "both": 65
     }
 	},
 	"berline": {
@@ -28,9 +28,9 @@
       "both": 100
     },
     "or": {
-      "inter": 80,
-      "exter": 60,
-      "both": 110
+      "inter": 50,
+      "exter": 30,
+      "both": 65
     }
 	},
 	"routiere": {
@@ -45,9 +45,9 @@
       "both": 110
     },
     "or": {
-      "inter": 90,
-      "exter": 70,
-      "both": 120
+      "inter": 50,
+      "exter": 30,
+      "both": 65
     }
 	},
 	"suv": {
@@ -62,9 +62,9 @@
       "both": 120
     },
     "or": {
-      "inter": 110,
-      "exter": 80,
-      "both": 140
+      "inter": 65,
+      "exter": 30,
+      "both": 75
     }
 	}
 }
