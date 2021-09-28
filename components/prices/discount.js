@@ -1,5 +1,6 @@
 import styles from './Discount.module.scss'
 import Image from 'next/image'
+import 'tailwindcss/tailwind.css'
 import Link from 'next/link'
 
 export default function discount ({
@@ -107,12 +108,12 @@ export default function discount ({
       </div>
       <div className={styles.cta}>
         <a
-          // rel="noreferrer"
-          // target='_blank'
+          rel="noreferrer"
+          target='_blank'
           href={`https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture?a3=${affiliateInfo?.name ||
             ''}&a4=+33${affiliateInfo?.phoneNumber || ''}`}
         >
-          <button onClick={logBoughtEvent}>Réserver un nettoyage</button>
+          <button className='text-black' onClick={logBoughtEvent}>Réserver un nettoyage</button>
         </a>
       </div>
     </section>

@@ -38,6 +38,11 @@ const forfaitDescInter = {
         'Shampoing complet habitacle(siège auto, tapis, moquettes et contre-porte)',
       url: '/images/shampoo.jpeg'
     },
+    {
+      text:
+        'Dégraissage de toutes les surfaces à la vapeur',
+      url: '/images/shampoo.jpeg'
+    },
     { text: 'Nettoyage vitres intérieures', url: '/images/car_windows.jpeg' },
     {
       text: 'Aspiration habitacle et coffre en profondeur',
