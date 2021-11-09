@@ -1,13 +1,12 @@
 import { ProvideAuth } from '../firebase/use-auth.js'
 import Navbar from '../components/navigation/navbar'
 import Footer from '../components/footer/footer'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'tailwindcss/tailwind.css'
 import '@fontsource/roboto';
-import '../styles/globals.scss'
 
 
 
-const Layout = ({ children }) => <div className='layout'>{children}</div>
+const Layout = ({ children }) => <div>{children}</div>
 
 function MyApp ({ Component, pageProps }) {
   return (
