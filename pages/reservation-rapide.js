@@ -43,7 +43,7 @@ export default function RapidReservation () {
         />
         <ReactPlayer
           onPlay={() => logPlayEvent()}
-          url='https://res.cloudinary.com/djwtktmre/video/upload/v1622724614/inside_only_tiny.mp4'
+          url={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1622724614/inside_only_tiny.mp4`}
           // playing={true}
           // muted={true}
           width={300}

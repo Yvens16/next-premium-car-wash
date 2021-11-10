@@ -34,46 +34,46 @@ export default function Navbar () {
       <div className='mx-auto container relative px-6 xl:px-0'>
         <nav className>
           <div className='lg:flex justify-between w-full hidden items-center'>
-            <a
+            <Link
               className='focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'
               role='banner'
-              href='javascript:void(0)'
+              href='/node_modules'
             >
               <img className='max-h-28' src='/images/logo_svg.svg' alt='Logo' />
-            </a>
+            </Link>
             <div className='mt-2 lg:w-2/3 xl:w-1/2'>
               <ul className='font-normal text-lg flex justify-between items-center text-black font-medium'>
                 <li className='hover:text-indigo-600 cursor-pointer'>
-                  <a
+                  <Link
                     className='focus:outline-none focus:underline focus:text-indigo-700'
-                    href='javascript:void(0)'
+                    href='/'
                   >
                     Accueil
-                  </a>
+                  </Link>
                 </li>
                 <li className='hover:text-indigo-600 cursor-pointer'>
-                  <a
+                  <Link
                     className='focus:outline-none focus:underline focus:text-indigo-700'
-                    href='javascript:void(0)'
+                    href='/contact'
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li className='hover:text-indigo-600 cursor-pointer'>
-                  <a
+                  <Link
                     className='focus:outline-none focus:underline focus:text-indigo-700'
-                    href='javascript:void(0)'
+                    href='/tarif-nettoyage-voiture-paris'
                   >
                     Prix
-                  </a>
+                  </Link>
                 </li>
                 <li className='hover:text-indigo-600 cursor-pointer underline font-bold'>
-                  <a
+                  <Link
                     className='focus:outline-none focus:text-indigo-700'
                     href='javascript:void(0)'
                   >
                     Recevoir grille tarifaire
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -82,13 +82,13 @@ export default function Navbar () {
         <nav className='lg:hidden'>
           <div className='flex justify-between items-center'>
             <div className='max-w-xs'>
-              <a className href='javascript:void(0)'>
+              <Link className href='javascript:void(0)'>
                 <img
                   className='max-h-16'
                   src='/images/logo_svg.svg'
                   alt='Logo'
                 />
-              </a>
+              </Link>
             </div>
             <div className='visible flex items-center'>
               {show && (
@@ -97,32 +97,32 @@ export default function Navbar () {
                   className='py-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-20 md:px-4 md:mt-20 z-20'
                 >
                   <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none'>
-                    <a href='javascript:void(0)'>
+                    <Link href='javascript:void(0)'>
                       <span className='ml-2 font-bold'>Accueil</span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center'
                     onclick='dropdownHandler(this)'
                   >
-                    <a href='javascript:void(0)'>
+                    <Link href='javascript:void(0)'>
                       <span className='ml-2 font-bold'>Contact</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none'>
-                    <a href='javascript:void(0)'>
+                    <Link href='javascript:void(0)'>
                       <span className='ml-2 font-bold'>Prix</span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center'
                     onclick='dropdownHandler(this)'
                   >
-                    <a href='javascript:void(0)'>
+                    <Link href='javascript:void(0)'>
                       <span className='ml-2 font-bold underline'>
                         Recevoir grille tarifaire
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}

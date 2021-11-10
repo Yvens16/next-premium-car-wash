@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { firebaseAnalytics } from '../firebase/firebase'
 import Head from 'next/head'
@@ -7,97 +8,23 @@ import Forfaits from '../components/prices/forfait'
 import Discount from '../components/prices/discount'
 import prices from '../utils/pricev2.json'
 
-
 export default function Tarifs () {
-  const [car, setCar] = useState({})
-  const [pageIndex, setPageIndex] = useState(0)
-  const [forfait, setForfait] = useState('or')
-  const [priceInter, setPriceInter] = useState()
-  const [priceExter, setPriceExter] = useState()
-  const [priceInterExter, setPriceInterExter] = useState()
-  const [whichDiscountPrice, setWhichDiscountPrice] = useState();
-  const [affiliateInfo, setAffiliateInfo]  = useState(null)
-  const scrollRef = useRef()
-  const addNewCar = newCar => {
-    setCar(newCar)
-    setForfait('or')
-    setPriceInter(newCar['or']['inter'])
-    setPriceExter(newCar['or']['exter'])
-    setPriceInterExter(newCar['or']['both'])
-    setPageIndex(1)
-  }
-  const removeCar = index => {
-    const newStateCars = car
-    newStateCars.splice(index, 1)
-    setCar(newStateCars)
-  }
   const chooseCarType = carType => {
     if (process.env.NODE_ENV === 'production') {
-      firebaseAnalytics().logEvent('select_car_type', { name: carType });
+      firebaseAnalytics().logEvent('select_car_type', { name: carType })
     }
-    const newCar = prices[carType]
-    addNewCar(newCar)
   }
 
   const logBoughtEvent = () => {
     if (process.env.NODE_ENV === 'production') {
-      firebaseAnalytics().logEvent('select_forfait_to_be_bought', { name: forfait });
-    }
-  }
-
-  const selectForfait = selectedForfait => {
-    setForfait(selectedForfait)
-    scrollRef.current.scrollIntoView({ behavior: 'smooth' })
-    setPriceInter(car[selectedForfait]['inter'])
-    setPriceExter(car[selectedForfait]['exter'])
-    setPriceInterExter(car[selectedForfait]['both'])
-  }
-
-  const goToDiscount = (which) => {
-    setWhichDiscountPrice(which);
-    if (process.env.NODE_ENV === 'production') {
-      firebaseAnalytics().logEvent('select_forfait', { name: forfait });
-    }
-    setPageIndex(2)
-  }
-  const goBack = () => {
-    let newIndex = pageIndex - 1
-    setPageIndex(newIndex)
-  }
-
-  useEffect(() => {
-    if (
-      new URLSearchParams(window.location.search).has('invitedby') &&
-      new URLSearchParams(window.location.search).has('phoneNumber')
-    ) {
-      setAffiliateInfo({
-        name: new URLSearchParams(window.location.search).get('invitedby'),
-        phoneNumber : new URLSearchParams(window.location.search).get('phoneNumber')
+      firebaseAnalytics().logEvent('select_forfait_to_be_bought', {
+        name: forfait
       })
     }
-  }, [])
+  }
 
-  let choiceComponent = <CarChoice chooseCar={chooseCarType} />
-  let forfaitComponent = (
-    <Forfaits
-      scrollRef={scrollRef}
-      selectForfait={selectForfait}
-      selectedForfait={forfait}
-      priceInter={priceInter}
-      goToDiscount={goToDiscount}
-      goBack={goBack}
-      priceExter={priceExter}
-      priceInterExter={priceInterExter}
-      ville={"Val d'oise (95) et Villes limitrophes"}
-    />
-  )
-  let discountComponent = <Discount
-  priceInter={priceInter} 
-  priceExter={priceExter} priceInterExter={priceInterExter}
-  goBack={goBack} affiliateInfo={affiliateInfo} logBoughtEvent={logBoughtEvent} whichDiscountPrice={whichDiscountPrice}/>
   return (
-    <main>
-      {console.log(affiliateInfo)}
+    <main className='mx-auto container py-12 px-4 md:px-6 lg:px-12 xl:px-20'>
       <Head>
         <title>Vous aussi profitez des tarifs de pro</title>
         <meta
@@ -105,9 +32,121 @@ export default function Tarifs () {
           content='Choisissez votre modèle de voiture pour avoir le prix'
         />
       </Head>
-      {pageIndex === 0 ? choiceComponent : null}
-      {pageIndex === 1 ? forfaitComponent : null}
-      {pageIndex === 2 ? discountComponent : null}
+      <div className='flex justify-center items-center'>
+        <div className='mt-14 grid-cols-1 grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-6 2xl:gap-x-20 2xl:flex 2xl:flex-wrap justify-between gap-y-20'>
+          <Link href='/voitures/citadine'>
+            <div className='group flex jusitfy-center flex-col cursor-pointer'>
+              <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                <img
+                  className='w-full h-full object-center object-cover cld-responsive'
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636468820/Premium%20car%20Wash/IMG_0881.jpg`}
+                  alt='watch-3'
+                />
+              </div>
+              <div className='mt-6 flex justify-between'>
+                <div>
+                  <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                    Petite Citadine
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link href='/voitures/berline'>
+            <div className='group flex jusitfy-center flex-col cursor-pointer'>
+              <div className='flex jusitfy-center flex-col cursor-pointer'>
+                <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                  <img
+                    className='w-full h-full object-center object-cover cld-responsive'
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636468820/Premium%20car%20Wash/IMG_1683.jpg`}
+                    alt='watch-3'
+                  />
+                </div>
+                <div className='mt-6 flex justify-between'>
+                  <div>
+                    <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                      Berline & Compact
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link href='/voitures/routiere'>
+            <div className='group flex jusitfy-center flex-col cursor-pointer'>
+              <div className='flex jusitfy-center flex-col cursor-pointer'>
+                <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                  <img
+                    className='w-full h-full object-center object-cover cld-responsive'
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636468820/Premium%20car%20Wash/IMG_2026.jpg`}
+                    alt='watch-3'
+                  />
+                </div>
+                <div className='mt-6 flex justify-between'>
+                  <div>
+                    <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                      Routière
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link href='/voitures/suv'>
+            <div className='flex jusitfy-center flex-col cursor-pointer'>
+              <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                <img
+                  className='w-full h-full object-center object-cover cld-responsive'
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636468823/Premium%20car%20Wash/IMG_2099.jpg`}
+                  alt='watch-3'
+                />
+              </div>
+              <div className='mt-6 flex justify-between'>
+                <div>
+                  <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                    SUV
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link href='/voitures/familiale'>
+            <div className='flex jusitfy-center flex-col cursor-pointer'>
+              <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                <img
+                  className='w-full h-full object-center object-cover cld-responsive'
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636470809/Premium%20car%20Wash/peugeot_5008.jpg`}
+                  alt='watch-4'
+                />
+              </div>
+              <div className='mt-6 flex justify-start items-start'>
+                <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                  Familiale 7 places
+                </p>
+              </div>
+              <div className='mt-6 flex justify-between w-full'>
+                <div></div>
+              </div>
+            </div>
+          </Link>
+          <Link href='/voitures/van'>
+            <div className='flex jusitfy-center flex-col cursor-pointer'>
+              <div className='relative sm:w-96 h-80 sm:h-96 flex flex-shrink-0 slider'>
+                <img
+                  className='w-full h-full object-center object-cover cld-responsive'
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636469957/Premium%20car%20Wash/van.jpg`}
+                  alt='watch-5'
+                />
+              </div>
+              <div className='mt-6 flex justify-start items-start'>
+                <p className='text-2xl font-semibold leading-6 text-gray-800'>
+                  Van
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
     </main>
   )
 }

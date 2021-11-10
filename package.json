@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -25,6 +25,7 @@
     "nanoid": "^3.1.23",
     "next": "^10.2.3",
     "nprogress": "^0.2.0",
+    "pure-react-carousel": "^1.27.6",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-dom": "17.0.2",

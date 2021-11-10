@@ -58,65 +58,49 @@ export default function Contact () {
     setMessage('')
   }
   return (
-    <main className={styles.contact}>
-      <Head>
-        <title>Contactez-nous pour un devis ou tout autres demandes!</title>
-        <meta
-          name='description'
-          content="Contactez-nous pour un nettoyage en profondeur !"
-        />
-      </Head>
-      <h1>Contactez-nous</h1>
-      <section className={styles.contact_us}>
-        <section className={styles.infos}>
-          <div className={styles.mail}>
-            <Image alt='email' src='/svg/mail.svg' width='30' height='30' />
-            <span>contact.premiumcarwash@gmail.com</span>
-          </div>
-          <div className={styles.phone}>
-            <Image alt='téléphone' src='/svg/phone-call.svg' width='30' height='30' />
-            <span>+33 6 27 26 94 73</span>
-          </div>
-        </section>
-        <div className={styles.form}>
-          <form onSubmit={submit}>
+    <>
+      <main className='container mx-auto flex justify-center items-center'>
+        <div className='my-20 lg:py-24'>
+          <h1 className='text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-800 lg:px-16 text-center uppercase'>
+            Nous contacter
+          </h1>
+          <div className='mt-10 md:mt-16 w-full h-full px-4 sm:px-0'>
             <input
+              type='name'
+              onChange={(e) => setName(e.target.value)}
               value={name}
-              type='text'
-              name='name'
-              placeholder='Nom'
-              id='name'
-              onChange={e => setName(e.target.value)}
+              placeholder='Jean Dujardin'
+              className='my-2 bg-gray-100 rounded w-full p-4 text-base leading-none text-gray-600 focus:outline-none border  border-transparent focus:border-gray-600'
             />
             <input
-              value={phone}
-              type='tel'
-              name='tel'
-              placeholder='+33 6 24 58 96 47'
-              id='tel'
-              onChange={e => setPhone(e.target.value)}
-            />
-            <input
+              onChange={(e) => setEmail(e.target.value)}
               value={email}
               type='email'
-              name='email'
               placeholder='jean.dujardin@gmail.com'
-              id='email'
-              onChange={e => setEmail(e.target.value)}
+              className='my-2 bg-gray-100 rounded w-full p-4 text-base leading-none text-gray-600 focus:outline-none border  border-transparent focus:border-gray-600'
+            />
+            <input
+            onChange={(e) => setPhone(e.target.value)}
+            value={phone}
+              type='phone'
+              placeholder='06 27 26 94 73'
+              className='my-2 bg-gray-100 rounded w-full p-4 text-base leading-none text-gray-600 focus:outline-none border  border-transparent focus:border-gray-600'
             />
             <textarea
+              onChange={(e) => setMessage(e.target.value)}
               value={message}
-              name='description'
+              type='text'
+              aria-label='Votre message'
               placeholder='Votre message'
-              id='description'
-              cols='30'
-              rows='10'
-              onChange={e => setMessage(e.target.value)}
-            ></textarea>
-            <button type='submit'>Envoyer message</button>
-          </form>
+              className='my-2 bg-gray-100 rounded text-base leading-none text-gray-600 mt-4 w-full h-64 pt-4 pl-4 resize-none focus:outline-none border border-2 border-transparent focus:border-gray-600'
+              defaultValue={''}
+            />
+            <button onClick={(e) => submit(e)} disabled={message == ''|| email == '' || name == '' || phone == ''} className='disabled:opacity-50 bg-teal-light hover:bg-teal rounded text-base font-medium leading-none text-white py-4 w-full mt-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'>
+              Envoyer
+            </button>
+          </div>
         </div>
-      </section>
-    </main>
+      </main>
+    </>
   )
 }

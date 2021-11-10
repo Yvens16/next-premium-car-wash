@@ -10,7 +10,7 @@ function couponFunnel () {
   const [showThankYou, setShowThankYou] = useState(false)
   const downloadImage = () => {
     saveAs(
-      'https://res.cloudinary.com/djwtktmre/image/upload/v1627462005/coupon.pdf',
+      `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1627462005/coupon.pdf`,
       'coupon_réduction.jpg'
     )
   }

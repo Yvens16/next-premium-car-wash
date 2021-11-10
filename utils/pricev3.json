@@ -1,30 +1,44 @@
 {
 	"citadine": {
-    "or": {
       "inter": 45,
-      "exter": 25,
-      "both": 70
-    }
+      "exter": 30,
+      "both": 55,
+      "time": "1h30",
+      "modèle": "Citadine"
 	},
 	"berline": {
-    "or": {
       "inter": 55,
-      "exter": 25,
-      "both": 75
-    }
+      "exter": 30,
+      "both": 65,
+      "time": "1h20",
+      "modèle": "Berline"
 	},
 	"routiere": {
-    "or": {
       "inter": 60,
-      "exter": 25,
-      "both": 80
-    }
+      "exter": 30,
+      "both": 75,
+      "time": "1h35",
+      "modèle": "Routière"
 	},
 	"suv": {
-    "or": {
       "inter": 65,
       "exter": 30,
-      "both": 95
-    }
+      "both": 85,
+      "time": "2h",
+      "modèle": "SUV"
+	},
+  "van" : {
+    "inter": 70,
+    "exter": 40,
+    "both": 95,
+    "time": "2h30",
+    "modèle": "Van"
+  },
+  "familiale": {
+		"inter": 85,
+		"exter": 40,
+		"both": 110,
+    "time": "3h00",
+    "modèle": "Familiale"
 	}
 }

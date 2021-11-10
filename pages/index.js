@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { buildUrl } from 'cloudinary-build-url'
 
 const Signup = dynamic(() => import('components/signup/signupBox'))
-// import Signup from 'components/signup/signupBox'
 
 import React, { useState } from 'react'
 
@@ -45,9 +45,11 @@ function MyApp () {
               la vapeur.
             </h2>
             <div className='my-2'>
-              <button className='focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 focus:outline-none mt-5 lg:mt-10 bg-teal text-base leading-none text-white hover:bg-teal-light p-4 rounded'>
-                Laver ma voiture
-              </button>
+              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                  Laver ma voiture
+                </button>
+              </Link>
             </div>
           </div>
           <div className='w-full custom-height mt-8 lg:mt-0 rounded-3xl relative'>
@@ -68,7 +70,11 @@ function MyApp () {
       <section className='max-w-8xl mx-auto container bg-white'>
         <div className='flex flex-col md:flex-row'>
           <div className='w-full md:w-1/2 px-4 md:px-2 lg:px-12 flex items-center'>
-            <img className='rounded max-h-full' src='/images/vapeur_gif.gif' alt />
+            <img
+              className='rounded max-h-full'
+              src='/images/vapeur_gif.gif'
+              alt
+            />
           </div>
           <div className='flex flex-col justify-center w-full md:w-1/2 px-4 md:pr-12'>
             <div className='pl-4'>
@@ -79,9 +85,11 @@ function MyApp () {
                 Nous utilisons la vapeur pour bien dégraisser et décontaminer
                 toutes les surfaces.
               </p>
-              <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
-                Laver ma voiture
-              </button>
+              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                  Laver ma voiture
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -90,7 +98,11 @@ function MyApp () {
       <section className='max-w-8xl mx-auto container bg-white'>
         <div className='flex flex-col md:flex-row-reverse'>
           <div className='w-full md:w-1/2 px-4 md:px-2 lg:px-12 flex items-center'>
-            <img className='rounded max-h-full' src='/images/exterior_gif.gif' alt />
+            <img
+              className='rounded max-h-full'
+              src='/images/exterior_gif.gif'
+              alt
+            />
           </div>
           <div className='flex flex-col justify-center w-full md:w-1/2 px-4 md:pr-12'>
             <div className='pl-4'>
@@ -106,9 +118,11 @@ function MyApp () {
                   <li>200 litre pour un particulier avec son karscher</li>
                 </ul>
               </p>
-              <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
-                Laver ma voiture
-              </button>
+              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                  Laver ma voiture
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -126,17 +140,17 @@ function MyApp () {
               <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:gap-x-10 gap-x-2 md:gap-y-10 gap-y-2 px-8 md:px-0'>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src="/svg/cartraderz.svg" alt="cartraderz" srcset="" />
+                    <img src='/svg/cartraderz.svg' alt='cartraderz' srcset='' />
                   </div>
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src="/svg/carcityvo.svg" alt="carcityvo" srcset="" />
+                    <img src='/svg/carcityvo.svg' alt='carcityvo' srcset='' />
                   </div>
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src="/svg/carcityvo.svg" alt="carcityvo" srcset="" />
+                    <img src='/svg/carcityvo.svg' alt='carcityvo' srcset='' />
                   </div>
                 </div>
               </div>
