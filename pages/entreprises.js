@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 function entreprises () {
+  const [show, setShow] = useState(true);
   let [absolHeight, setAblsolHeight] = useState(null)
   let absoluteDivHeight = useRef(null)
   const handleLoadImage = () => {
@@ -598,6 +599,26 @@ function entreprises () {
               }
               `}
       </style>
+      <div className="flex items-center justify-center py-12">
+            <div className="mx-4 md:w-10/12 flex items-center justify-center relative bg-teal">
+                {/* <img className="hidden lg:block w-full h-full absolute rounded-md" src="https://i.ibb.co/hRFzFwd/Group-184.png" alt="background" />
+                <img className="hidden sm:block lg:hidden w-full h-full absolute rounded-md" src="https://i.ibb.co/nBfFP0h/i-Pad-mini-01-1.png" alt="background" />
+                <img className="sm:hidden w-full h-full absolute rounded-md" src="https://i.ibb.co/d5F32YJ/bg-small.png" alt="background" /> */}
+                <div className="relative z-10 w-full">
+                    <div className="flex flex-col justify-start py-8 lg:px-10 md:px-6 px-4">
+                        <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white">Construisons ensemble la dernière appli de gestion de flotte</h1>
+                        <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composer de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagner 1 an d'utilisation gratuite de la licence</p>
+                        <div className="pb-6 md:pb-4 flex flex-col justify-center items-center md:flex-row md:justify-start gap-6 md:gap-4">
+                            <input type="text" placeholder="Your Name" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
+                            <button className="flex items-center justify-center w-80 md:w-28 h-12 bg-pastel rounded-md text-white font-medium text-base focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-opacity-50 hover:bg-teal-light">Devenir bêta testeur</button>
+                        </div>
+                        <p className="text-base font-medium leading-none text-gray-200">
+                            On ne vous spamera jamais, vous pouvez immédiatement vous désinscrire.{" "}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </>
   )
 }
