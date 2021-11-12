@@ -15,25 +15,27 @@ function MyApp () {
       <div className='mx-auto container relative px-6 py-7 xl:px-0'>
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 items-center'>
           <div className='xl:mt-8'>
-            <button className='animate-bounce-custom focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal hover:opacity-90 flex items-center relative focus:outline-none justify-center mt-5 lg:mt-10 text-sm lg:text-base font-medium text-teal p-2 lg:p-2 bg-pastel rounded-md'>
-              Je suis une entreprise
-              <svg
-                className='ml-5'
-                xmlns='http://www.w3.org/2000/svg'
-                width={26}
-                height={17}
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M13 5l7 7-7 7M5 5l7 7-7 7'
-                />
-              </svg>
-            </button>
+            <Link href='/entreprises'>
+              <button className='animate-bounce-custom focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal hover:opacity-90 flex items-center relative focus:outline-none justify-center mt-5 lg:mt-10 text-sm lg:text-base font-medium text-teal p-2 lg:p-2 bg-pastel rounded-md'>
+                Je suis une entreprise
+                <svg
+                  className='ml-5'
+                  xmlns='http://www.w3.org/2000/svg'
+                  width={26}
+                  height={17}
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M13 5l7 7-7 7M5 5l7 7-7 7'
+                  />
+                </svg>
+              </button>
+            </Link>
             <div className='text-3xl lg:text-6xl xl:text-8xl text-gray-800 tracking-1px font-extrabold'>
               <h1 className='lg:text-7xl leading-tight mt-3 lg:mt-4'>
                 Lavage écologique à domicile
@@ -137,7 +139,7 @@ function MyApp () {
               </h2>
             </div>
             <div className='mt-14'>
-              <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:gap-x-10 gap-x-2 md:gap-y-10 gap-y-2 px-8 md:px-0'>
+              <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 md:gap-x-10 gap-x-2 md:gap-y-10 gap-y-2 px-8 md:px-0'>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
                     <img src='/svg/cartraderz.svg' alt='cartraderz' srcset='' />
@@ -150,7 +152,7 @@ function MyApp () {
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src='/svg/carcityvo.svg' alt='carcityvo' srcset='' />
+                    <img src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1636671626/idealcars-removebg-preview.png`} alt='carcityvo' srcset='' />
                   </div>
                 </div>
               </div>

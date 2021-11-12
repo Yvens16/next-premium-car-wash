@@ -128,41 +128,43 @@ function prix () {
                 </div>
                     ))}
               </div>
-              <div className='mt-16 flex justify-start'>
-                <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-teal-light rounded-3xl text-white focus:outline-none text-lg xl:text-2xl tracking-widerw-auto lg:w-full flex items-center justify-between'>
-                  Réserver
-                  <svg
-                    className='ml-6 lg:ml-0 w-6 lg:w-auto'
-                    xmlns='http://www.w3.org/2000/svg'
-                    width={37}
-                    height={32}
-                    viewBox='0 0 37 32'
-                    fill='none'
-                  >
-                    <path
-                      d='M35 16L2 16'
-                      stroke='white'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 1.99999'
-                      stroke='white'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 30'
-                      stroke='white'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                </button>
-              </div>
+              <a href='https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture' target='_blank'>
+                <div className='mt-16 flex justify-start'>
+                  <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-teal-light rounded-3xl text-white focus:outline-none text-lg xl:text-2xl tracking-widerw-auto lg:w-full flex items-center justify-between'>
+                    Réserver
+                    <svg
+                      className='ml-6 lg:ml-0 w-6 lg:w-auto'
+                      xmlns='http://www.w3.org/2000/svg'
+                      width={37}
+                      height={32}
+                      viewBox='0 0 37 32'
+                      fill='none'
+                    >
+                      <path
+                        d='M35 16L2 16'
+                        stroke='white'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 1.99999'
+                        stroke='white'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 30'
+                        stroke='white'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
             </div>
             <div className='px-11 py-12 bg-gray-100 rounded-3xl mt-6 lg:mt-0 lg:ml-8 flex-shrink-0'>
               <h1 className='text-3xl lg:text-4xl font-medium text-gray-800 pb-12 tracking-wider'>
@@ -204,41 +206,43 @@ function prix () {
                 </div>
                 ))}
               </div>
-              <div className='mt-16 flex justify-start'>
-                <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-teal-light text-white rounded-3xl focus:outline-none text-lg xl:text-2xl tracking-wider w-auto lg:w-full flex items-center justify-between'>
-                  Réserver
-                  <svg
-                    className='ml-6 lg:ml-0 w-6 lg:w-auto'
-                    xmlns='http://www.w3.org/2000/svg'
-                    width={37}
-                    height={32}
-                    viewBox='0 0 37 32'
-                    fill='none'
-                  >
-                    <path
-                      d='M35 16L2 16'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 1.99999'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 30'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                </button>
-              </div>
+              <a href='https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture' target='_blank'>
+                <div className='mt-16 flex justify-start'>
+                  <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-teal-light text-white rounded-3xl focus:outline-none text-lg xl:text-2xl tracking-wider w-auto lg:w-full flex items-center justify-between'>
+                    Réserver
+                    <svg
+                      className='ml-6 lg:ml-0 w-6 lg:w-auto'
+                      xmlns='http://www.w3.org/2000/svg'
+                      width={37}
+                      height={32}
+                      viewBox='0 0 37 32'
+                      fill='none'
+                    >
+                      <path
+                        d='M35 16L2 16'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 1.99999'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 30'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
             </div>
             <div className='px-11 py-12 bg-teal-light rounded-3xl mt-6 lg:mt-0 lg:ml-8 flex-shrink-0'>
               <h1 className='text-3xl lg:text-4xl font-medium text-white pb-12 tracking-wider'>
@@ -278,41 +282,43 @@ function prix () {
                   </p>
                 </div>
               </div>
-              <div className='mt-16 flex justify-start'>
-                <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-white text-teal-light rounded-3xl focus:outline-none text-lg xl:text-2xl tracking-wider w-auto lg:w-full flex items-center justify-between'>
-                  Réserver
-                  <svg
-                    className='ml-6 lg:ml-0 w-6 lg:w-auto'
-                    xmlns='http://www.w3.org/2000/svg'
-                    width={37}
-                    height={32}
-                    viewBox='0 0 37 32'
-                    fill='none'
-                  >
-                    <path
-                      d='M35 16L2 16'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 1.99999'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M35 16L20.8571 30'
-                      stroke='currentColor'
-                      strokeWidth={3}
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                </button>
-              </div>
+              <a href='https://calendly.com/contact-premiumcarwash/reservation-nettoyage-voiture' target='_blank'>
+                <div className='mt-16 flex justify-start'>
+                  <button className='py-3 lg:py-6 pl-6 lg:pl-12 pr-8 bg-white text-teal-light rounded-3xl focus:outline-none text-lg xl:text-2xl tracking-wider w-auto lg:w-full flex items-center justify-between'>
+                    Réserver
+                    <svg
+                      className='ml-6 lg:ml-0 w-6 lg:w-auto'
+                      xmlns='http://www.w3.org/2000/svg'
+                      width={37}
+                      height={32}
+                      viewBox='0 0 37 32'
+                      fill='none'
+                    >
+                      <path
+                        d='M35 16L2 16'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 1.99999'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                      <path
+                        d='M35 16L20.8571 30'
+                        stroke='currentColor'
+                        strokeWidth={3}
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
             </div>
           </div>
         </div>

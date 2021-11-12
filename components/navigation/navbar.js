@@ -35,46 +35,46 @@ export default function Navbar () {
         <nav className>
           <div className='lg:flex justify-between w-full hidden items-center'>
             <Link
-              className='focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'
+              className='focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-light'
               role='banner'
-              href='/node_modules'
+              href='/'
             >
               <img className='max-h-28' src='/images/logo_svg.svg' alt='Logo' />
             </Link>
             <div className='mt-2 lg:w-2/3 xl:w-1/2'>
               <ul className='font-normal text-lg flex justify-between items-center text-black font-medium'>
-                <li className='hover:text-indigo-600 cursor-pointer'>
+                <li className='hover:text-teal-light cursor-pointer'>
                   <Link
-                    className='focus:outline-none focus:underline focus:text-indigo-700'
+                    className='focus:outline-none focus:underline focus:text-teal'
                     href='/'
                   >
                     Accueil
                   </Link>
                 </li>
-                <li className='hover:text-indigo-600 cursor-pointer'>
+                <li className='hover:text-teal-light cursor-pointer'>
                   <Link
-                    className='focus:outline-none focus:underline focus:text-indigo-700'
+                    className='focus:outline-none focus:underline focus:text-teal'
                     href='/contact'
                   >
                     Contact
                   </Link>
                 </li>
-                <li className='hover:text-indigo-600 cursor-pointer'>
+                <li className='hover:text-teal-light cursor-pointer'>
                   <Link
-                    className='focus:outline-none focus:underline focus:text-indigo-700'
-                    href='/tarif-nettoyage-voiture-paris'
+                    className='focus:outline-none focus:underline focus:text-teal'
+                    href='/entreprises'
                   >
-                    Prix
+                    Professionelles
                   </Link>
                 </li>
-                <li className='hover:text-indigo-600 cursor-pointer underline font-bold'>
+                {/* <li className='hover:text-teal-light cursor-pointer underline font-bold'>
                   <Link
-                    className='focus:outline-none focus:text-indigo-700'
+                    className='focus:outline-none focus:text-teal'
                     href='javascript:void(0)'
                   >
                     Recevoir grille tarifaire
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -96,26 +96,26 @@ export default function Navbar () {
                   id='list'
                   className='py-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-20 md:px-4 md:mt-20 z-20'
                 >
-                  <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none'>
-                    <Link href='javascript:void(0)'>
+                  <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-teal-light focus:text-teal focus:outline-none'>
+                    <Link href='/'>
                       <span className='ml-2 font-bold'>Accueil</span>
                     </Link>
                   </li>
                   <li
-                    className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center'
+                    className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-teal-light focus:text-teal focus:outline-none flex justify-center'
                     onclick='dropdownHandler(this)'
                   >
-                    <Link href='javascript:void(0)'>
+                    <Link href='/contact'>
                       <span className='ml-2 font-bold'>Contact</span>
                     </Link>
                   </li>
-                  <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none'>
-                    <Link href='javascript:void(0)'>
-                      <span className='ml-2 font-bold'>Prix</span>
+                  <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-teal-light flex items-center focus:text-teal focus:outline-none'>
+                    <Link href='/entreprises'>
+                      <span className='ml-2 font-bold'>Professionelles</span>
                     </Link>
                   </li>
-                  <li
-                    className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center'
+                  {/* <li
+                    className='flex flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-teal-light focus:text-teal focus:outline-none flex justify-center'
                     onclick='dropdownHandler(this)'
                   >
                     <Link href='javascript:void(0)'>
@@ -123,7 +123,7 @@ export default function Navbar () {
                         Recevoir grille tarifaire
                       </span>
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               )}
               <div className='xl:hidden' onClick={() => setShow(!show)}>
