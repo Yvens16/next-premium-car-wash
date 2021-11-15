@@ -180,7 +180,7 @@ function MyApp () {
           </div>
         </section>
       </div>
-    </div>
+    </main>
   )
 }
 
