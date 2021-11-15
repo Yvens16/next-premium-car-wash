@@ -77,11 +77,11 @@ function prix () {
             </div>
             <h1 className='pr-2 mt-8 text-gray-800 text-2xl lg:text-5xl font-bold tracking-1px lg:w-10/12 leading-9'>
               Un travail d'artisan d'environ {pid ? prices[pid]['time'] : ''}{' '}
-              sur votre {pid ? prices[pid]['modèle'] : ''} car tous est dans le
+              sur votre {pid ? prices[pid]['modèle'] : ''} car tout est dans le
               détail
             </h1>
             <p className='w-10/12 lg:w-7/12 leading-8 text-gray-700 mt-5 mb-12'>
-              Retrouvez votre voiture ultra propre et désinfecté suite à notre
+              Retrouvez votre voiture ultra propre et désinfectée suite à notre
               passage. Profitez de la bonne odeur de notre parfum conçu
               exclusivement par notre partenaire.
             </p>
@@ -278,7 +278,7 @@ function prix () {
                     </div>
                   </div>
                   <p className='ml-3 text-base leading-4 font-normal text-white'>
-                    Tous ce qui est compris dans <br/> intérieur et extérieur
+                    Tout ce qui est compris dans <br/> intérieur et extérieur
                   </p>
                 </div>
               </div>

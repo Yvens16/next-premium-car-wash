@@ -42,6 +42,14 @@ class MyDocument extends Document {
             }}
           />
           {/* End Smartlook code */}
+          {/* Start Crisp code */}
+          <script
+            type='text/javascript'
+            dangerouslySetInnerHTML={{
+              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="dbd97803-f5f3-4962-b7e1-2769abe2dd03";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`
+            }}
+          />
+          {/* End Crisp code */}
         </Head>
         <body>
           <noscript

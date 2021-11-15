@@ -4,6 +4,9 @@
     <loc>https://premiumcarwash.fr//contact</loc>
   </url>
   <url>
+    <loc>https://premiumcarwash.fr//entreprises</loc>
+  </url>
+  <url>
     <loc>https://premiumcarwash.fr/</loc>
   </url>
   <url>
@@ -38,5 +41,8 @@
   </url>
   <url>
     <loc>https://premiumcarwash.fr//admin/add-content-to-affiliate</loc>
+  </url>
+  <url>
+    <loc>https://premiumcarwash.fr//voitures/[pid]</loc>
   </url>
 </urlset>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 const Airtable = require('airtable')
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -100,6 +100,7 @@ export default function Contact () {
             </button>
           </div>
         </div>
+        <ToastContainer />
       </main>
     </>
   )

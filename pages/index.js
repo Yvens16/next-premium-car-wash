@@ -48,7 +48,7 @@ function MyApp () {
             </h2>
             <div className='my-2'>
               <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
-                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
               </Link>
@@ -88,7 +88,7 @@ function MyApp () {
                 toutes les surfaces.
               </p>
               <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
-                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
               </Link>
@@ -115,13 +115,13 @@ function MyApp () {
                 <ul>
                   <li>0 litre de consommation d'eau pour Premium Car Wash</li>
                   <li>
-                    150 litre pour un lavage auto haute pression en station
+                    150 litres pour un lavage auto haute pression en station
                   </li>
-                  <li>200 litre pour un particulier avec son karscher</li>
+                  <li>200 litres pour un particulier avec son kärcher</li>
                 </ul>
               </p>
               <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
-                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
+                <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
               </Link>

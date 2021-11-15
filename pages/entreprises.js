@@ -1,6 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react'
+const Airtable = require('airtable')
+import { toast, ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
+const base = new Airtable({
+  apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY
+}).base(process.env.NEXT_PUBLIC_AIRTABLE_BASE)
+
 function entreprises () {
-  const [show, setShow] = useState(true);
+  const [email, setEmail] = useState('');
   let [absolHeight, setAblsolHeight] = useState(null)
   let absoluteDivHeight = useRef(null)
   const handleLoadImage = () => {
@@ -12,6 +20,39 @@ function entreprises () {
       handleLoadImage()
     }
   }, [])
+
+  const submit = event => {
+    event.preventDefault()
+    base('beta').create(
+      [
+        {
+          fields: {
+            email,
+          }
+        }
+      ],
+      function (err, records) {
+        console.log('records:', records)
+        if (err) {
+          console.error(err)
+          toast.error(
+            "Nous avons eu un petit problème avec l'enregistrement de votre email, veuillez réessayer svp",
+            {
+              position: toast.POSITION.TOP_CENTER
+            }
+          )
+          return
+        }
+        toast.success('votre email à bie été enregistrer, Merci !', {
+          position: toast.POSITION.TOP_CENTER
+        })
+        setEmail('');
+        records.forEach(function (record) {
+          console.log(record.getId())
+        })
+      }
+    )
+  }
   return (
     <>
       <div>
@@ -370,9 +411,7 @@ function entreprises () {
                 Gagnez du temps dans la gestion de votre parc automobile
               </h1>
               <h1 className='text-base lg:text-lg tracking-wide leading-9 mt-2 lg:mt-6 text-white text-center'>
-                Un lavage écologique et une remonté de l'état de vos véhicules
-                en temps réelle depuis votre bureau. Alliant propreté et
-                sécurité
+              Un lavage écologique et une remontée de l'état de vos véhicules en temps réel depuis votre bureau. Alliant propreté et sécurité
               </h1>
             </div>
             <div className='flex justify-center items-center mb-10 sm:mb-20'>
@@ -440,12 +479,10 @@ function entreprises () {
                   <h1 className='font-semibold text-2xl f-m-m pt-10'>
                     Lavage écologique
                     <br />
-                    Sans Eeau
+                    Sans Eau
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                    Nos équipes interviennent sur tous le territoire français
-                    pour nettoyer, lustrer et désinfecté les véhicules de vos
-                    flottes et maintenir leur état comme neuf.
+                  Grâce à notre application, obtenez une vérification visuelle en temps réel de vos véhicules depuis l'ordinateur de votre bureau ou depuis votre smartphone.
                   </p>
                 </div>
               </div>
@@ -504,11 +541,7 @@ function entreprises () {
                     Pour réagir plus vite
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                    Soyez alerté des niveau des fluides, de la pression et de
-                    l'usure des pneus, du voyant moteur, du niveau de l'adblue,
-                    les feux etc... Tous ces points qui vous permettront
-                    d'anticipé d'éventuelle panne ou problème de sécurité suite
-                    à un mauvais entretien.
+                  Soyez alerté des niveaux des fluides, de la pression et de l'usure des pneus, du voyant moteur, du niveau de l'adblue, les feux, etc... Tous ces points qui vous permettront d'anticiper d'éventuelle panne ou problème de sécurité suite à un mauvais entretien.
                   </p>
                 </div>
               </div>
@@ -573,7 +606,7 @@ function entreprises () {
                     Facile et évolutifs <br />
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                    Notre logiciel ne nécessitent pas de formation et nous utilisons les remontés des gestionnaires de flotte pour mettre à jour notre logiciel. Mise à jour ne nécessitant aucune intervention de votre part étant un software-as-a-service (saas).
+                  Notre logiciel ne nécessite pas de formation et nous utilisons les remontées des gestionnaires de flotte pour mettre à jour notre logiciel. Mise à jour ne nécessitant aucune intervention de votre part étant un software-as-a-service (saas).
                   </p>
                 </div>
               </div>
@@ -584,8 +617,8 @@ function entreprises () {
               Pourquoi, vous devriez nous choisir ?
             </h1>
             <p className='lg:text-base text-sm f-m-m leading-loose mt-3 mb-8'>
-              Nous proposons un service simple et efficace de lavage automobile sur site avec un contrôle visuel de sécurité du véhicule.
-              Vous aussi, réduisez de 90% vos aléas sur votre flotte de véhicule.
+            Nous proposons un service simple et efficace de lavage automobile sur site avec un contrôle visuel de sécurité du véhicule.
+Vous aussi, réduisez de 90 % vos aléas sur votre flotte de véhicules.
             </p>
             <button className=' hover:opacity-90 text-base font-bold bg-teal-light rounded f-m-m md:py-4 py-2 px-4 md:px-8 foucus:outline-none text-white'>
               Réserver une démo gratuite
@@ -607,10 +640,10 @@ function entreprises () {
                 <div className="relative z-10 w-full">
                     <div className="flex flex-col justify-start py-8 lg:px-10 md:px-6 px-4">
                         <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white">Construisons ensemble la dernière appli de gestion de flotte</h1>
-                        <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composer de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagner 1 an d'utilisation gratuite de la licence</p>
+                        <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composée de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagner 1 an d'utilisation gratuite de la licence</p>
                         <div className="pb-6 md:pb-4 flex flex-col justify-center items-center md:flex-row md:justify-start gap-6 md:gap-4">
-                            <input type="text" placeholder="Your Name" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
-                            <button className="flex items-center justify-center w-80 md:w-28 h-12 bg-pastel rounded-md text-white font-medium text-base focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-opacity-50 hover:bg-teal-light">Devenir bêta testeur</button>
+                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jeandujardon@gmail.com" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
+                            <button onClick={submit} className="flex items-center justify-center w-80 md:w-28 h-12 bg-pastel rounded-md text-white font-medium text-base focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-opacity-50 hover:bg-teal-light">Devenir bêta testeur</button>
                         </div>
                         <p className="text-base font-medium leading-none text-gray-200">
                             On ne vous spamera jamais, vous pouvez immédiatement vous désinscrire.{" "}
@@ -619,6 +652,7 @@ function entreprises () {
                 </div>
             </div>
         </div>
+        <ToastContainer/>
     </>
   )
 }
