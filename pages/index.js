@@ -1,17 +1,25 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import { buildUrl } from 'cloudinary-build-url'
+import Head from 'next/head'
 
-const Signup = dynamic(() => import('components/signup/signupBox'))
-
-import React, { useState } from 'react'
+import React from 'react'
 
 function MyApp () {
   return (
-    <div>
+    <main>
+      <Head>
+        <title>Lavage de voiture écologique sans eau et à la vapeur</title>
+        <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width initial-scale=1, maximum-scale=1, user-scalable=0'
+        />
+        <meta
+          name='description'
+          content='Profitez des réductions des professionnels vous aussi'
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <div className='mx-auto container relative px-6 py-7 xl:px-0'>
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 items-center'>
           <div className='xl:mt-8'>
@@ -47,7 +55,10 @@ function MyApp () {
               la vapeur.
             </h2>
             <div className='my-2'>
-              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+              <Link
+                className='cursor-pointer'
+                href='tarif-nettoyage-voiture-paris'
+              >
                 <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
@@ -87,7 +98,10 @@ function MyApp () {
                 Nous utilisons la vapeur pour bien dégraisser et décontaminer
                 toutes les surfaces.
               </p>
-              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+              <Link
+                className='cursor-pointer'
+                href='tarif-nettoyage-voiture-paris'
+              >
                 <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
@@ -120,7 +134,10 @@ function MyApp () {
                   <li>200 litres pour un particulier avec son kärcher</li>
                 </ul>
               </p>
-              <Link className='cursor-pointer' href='tarif-nettoyage-voiture-paris'>
+              <Link
+                className='cursor-pointer'
+                href='tarif-nettoyage-voiture-paris'
+              >
                 <button className='my-4 lg:my-8 lg:mb-0 bg-teal transition duration-150 ease-in-out hover:bg-teal-light focus:outline-none rounded text-white py-2 px-4  xl:px-8 xl:py-4 text-base xl:text-xl'>
                   Laver ma voiture
                 </button>
@@ -152,7 +169,11 @@ function MyApp () {
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1636671626/idealcars-removebg-preview.png`} alt='carcityvo' srcset='' />
+                    <img
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1636671626/idealcars-removebg-preview.png`}
+                      alt='carcityvo'
+                      srcset=''
+                    />
                   </div>
                 </div>
               </div>
