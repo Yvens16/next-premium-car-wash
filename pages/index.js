@@ -65,16 +65,13 @@ function MyApp () {
             </div>
           </div>
           <div className='w-full custom-height mt-8 lg:mt-0 rounded-3xl relative'>
-            <a tabIndex={-1} href='javascript:void(0)'>
-              {/* https://internationalfleetworld.com/wp-content/uploads/2021/02/Renault-Zoe-electric-cars-fleet-Onto2.jpg */}
-              {/* <img src="/images/hero_svg.svg" alt="Group-1" /> */}
-              <img src='/images/hero_gif.gif' alt='' />
-              {/* <video controls autoplay>
-                <source src='/images/video_hero.mp4' type='video/mp4' />
-                <source src='/images/video_hero.mp4' type='video/ogg' />
-                Your browser does not support the video tag.
-              </video> */}
-            </a>
+            <video
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637069437/Premium%20car%20Wash/video_hero.mp4`}
+              className='rounded max-h-full'
+              autoPlay={true}
+              loop
+              muted
+            />
           </div>
         </div>
       </div>
@@ -82,10 +79,12 @@ function MyApp () {
       <section className='max-w-8xl mx-auto container bg-white'>
         <div className='flex flex-col md:flex-row'>
           <div className='w-full md:w-1/2 px-4 md:px-2 lg:px-12 flex items-center'>
-            <img
+            <video
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637064289/Premium%20car%20Wash/vapeur_video.mp4`}
               className='rounded max-h-full'
-              src='/images/vapeur_gif.gif'
-              alt
+              autoPlay={true}
+              loop
+              muted
             />
           </div>
           <div className='flex flex-col justify-center w-full md:w-1/2 px-4 md:pr-12'>
@@ -113,10 +112,12 @@ function MyApp () {
       <section className='max-w-8xl mx-auto container bg-white'>
         <div className='flex flex-col md:flex-row-reverse'>
           <div className='w-full md:w-1/2 px-4 md:px-2 lg:px-12 flex items-center'>
-            <img
+            <video
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637064569/Premium%20car%20Wash/exterior_video.mp4`}
               className='rounded max-h-full'
-              src='/images/exterior_gif.gif'
-              alt
+              autoPlay={true}
+              loop
+              muted
             />
           </div>
           <div className='flex flex-col justify-center w-full md:w-1/2 px-4 md:pr-12'>
@@ -180,6 +181,10 @@ function MyApp () {
           </div>
         </section>
       </div>
+      <style>{`#controller {
+        display: none;
+        background: red;
+      }`}</style>
     </main>
   )
 }

@@ -28,6 +28,7 @@ function prix () {
       <div className='mt-6 lg:mt-0'>
             <div className='flex items-center'>
               <svg
+                className='mr-2'
                 xmlns='http://www.w3.org/2000/svg'
                 width={188}
                 height={3}
@@ -43,7 +44,7 @@ function prix () {
                   strokeWidth={3}
                 />
               </svg>
-              <svg
+              {/* <svg
                 className='ml-3'
                 xmlns='http://www.w3.org/2000/svg'
                 width={12}
@@ -73,7 +74,8 @@ function prix () {
                   strokeLinecap='round'
                   strokeLinejoin='round'
                 />
-              </svg>
+              </svg> */}
+              <span className='text-teal-light'>{"    "}€</span>
             </div>
             <h1 className='pr-2 mt-8 text-gray-800 text-2xl lg:text-5xl font-bold tracking-1px lg:w-10/12 leading-9'>
               Un travail d'artisan d'environ {pid ? prices[pid]['time'] : ''}{' '}

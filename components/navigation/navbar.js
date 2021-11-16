@@ -35,8 +35,6 @@ export default function Navbar () {
         <nav className>
           <div className='lg:flex justify-between w-full hidden items-center'>
             <Link
-              className='focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-light'
-              role='banner'
               href='/'
             >
               <img className='max-h-28' src='/images/logo_svg.svg' alt='Logo' />
@@ -82,7 +80,7 @@ export default function Navbar () {
         <nav className='lg:hidden'>
           <div className='flex justify-between items-center'>
             <div className='max-w-xs'>
-              <Link className href='javascript:void(0)'>
+              <Link className href='/'>
                 <img
                   className='max-h-16'
                   src='/images/logo_svg.svg'
