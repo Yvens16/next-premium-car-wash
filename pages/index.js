@@ -69,6 +69,7 @@ function MyApp () {
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637069437/Premium%20car%20Wash/video_hero.mp4`}
               className='rounded max-h-full'
               autoPlay={true}
+              playsInline
               loop
               muted
             />
@@ -83,6 +84,7 @@ function MyApp () {
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637064289/Premium%20car%20Wash/vapeur_video.mp4`}
               className='rounded max-h-full'
               autoPlay={true}
+              playsInline
               loop
               muted
             />
@@ -116,6 +118,7 @@ function MyApp () {
               src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/video/upload/v1637064569/Premium%20car%20Wash/exterior_video.mp4`}
               className='rounded max-h-full'
               autoPlay={true}
+              playsInline
               loop
               muted
             />
