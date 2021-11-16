@@ -162,18 +162,18 @@ function MyApp () {
               <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 md:gap-x-10 gap-x-2 md:gap-y-10 gap-y-2 px-8 md:px-0'>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src='/svg/cartraderz.svg' alt='cartraderz' srcset='' />
+                    <img src={`https://res.cloudinary.com/djwtktmre/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1637072102/Premium%20car%20Wash/cartraderz.svg`} alt='cartraderz' srcset='' />
                   </div>
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
-                    <img src='/svg/carcityvo.svg' alt='carcityvo' srcset='' />
+                    <img src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1637072103/Premium%20car%20Wash/carcityvo.svg`} alt='carcityvo' srcset='' />
                   </div>
                 </div>
                 <div className='w-full flex-1'>
                   <div className='flex items-center justify-center flex-1 h-full  px-6 py-9 cursor-pointer hover:bg-gray-100 bg-white shadow'>
                     <img
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1636671626/idealcars-removebg-preview.png`}
+                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/q_auto,f_auto,fl_progressive,w_auto,c_scale/v1636671626/idealcars-removebg-preview.png`}
                       alt='carcityvo'
                       srcset=''
                     />
