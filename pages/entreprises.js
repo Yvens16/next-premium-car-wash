@@ -431,7 +431,7 @@ function entreprises () {
             <div className='relative sm:w-2/3 w-11/12'>
               <img
                 ref={absoluteDivHeight}
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1636733057/Premium%20car%20Wash/ecccopartners_dashboard.png`}
+                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_SMARTLOOK_CLOUDINARY_NAME}/image/upload/v1637164965/Premium%20car%20Wash/ecccopartners.jpg`}
                 alt
                 className='absolute'
                 onLoad={handleLoadImage}
@@ -642,7 +642,7 @@ Vous aussi, réduisez de 90 % vos aléas sur votre flotte de véhicules.
                         <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white">Construisons ensemble la dernière appli de gestion de flotte</h1>
                         <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composée de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagner 1 an d'utilisation gratuite de la licence</p>
                         <div className="pb-6 md:pb-4 flex flex-col justify-center items-center md:flex-row md:justify-start gap-6 md:gap-4">
-                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jeandujardon@gmail.com" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
+                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jeandujardin@gmail.com" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
                             <button onClick={submit} className="flex items-center justify-center w-80 md:w-28 h-12 bg-pastel rounded-md text-white font-medium text-base focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-opacity-50 hover:bg-teal-light">Devenir bêta testeur</button>
                         </div>
                         <p className="text-base font-medium leading-none text-gray-200">
