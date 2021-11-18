@@ -482,7 +482,7 @@ function entreprises () {
                     Sans Eau
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                  Grâce à notre application, obtenez une vérification visuelle en temps réel de vos véhicules depuis l'ordinateur de votre bureau ou depuis votre smartphone.
+                  Nos équipes interviennent sur tous le territoire français pour nettoyer, lustrer et désinfecté les véhicules de vos flottes et maintenir leur état neuf.
                   </p>
                 </div>
               </div>

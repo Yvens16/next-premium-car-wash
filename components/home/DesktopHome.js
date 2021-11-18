@@ -29,7 +29,7 @@ export default function DesktopHome () {
         <div className={styles.content}>
           <h2>Débosselage sans peinture à Paris </h2>
           <p>
-            Notre équipe de professionnel se déplace à travers Paris et sa
+            Notre équipe de professionnels se déplace à travers Paris et sa
             périphérie afin de soigner votre carrosserie. Que ce soit une rayure
             ou une bosse plus prononcée.
           </p>

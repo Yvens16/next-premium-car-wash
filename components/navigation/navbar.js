@@ -62,7 +62,7 @@ export default function Navbar () {
                     className='focus:outline-none focus:underline focus:text-teal'
                     href='/entreprises'
                   >
-                    Professionelles
+                    professionnels
                   </Link>
                 </li>
                 {/* <li className='hover:text-teal-light cursor-pointer underline font-bold'>
@@ -109,7 +109,7 @@ export default function Navbar () {
                   </li>
                   <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-teal-light flex items-center focus:text-teal focus:outline-none'>
                     <Link href='/entreprises'>
-                      <span className='ml-2 font-bold'>Professionelles</span>
+                      <span className='ml-2 font-bold'>professionnels</span>
                     </Link>
                   </li>
                   {/* <li
