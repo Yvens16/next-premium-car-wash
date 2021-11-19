@@ -7,12 +7,12 @@ import styles from './Navbar.module.scss'
 
 export default function Navbar () {
   const [displaySocial, setDisplaySocial] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [show, setShow] = useState(false)
   const shareRef = useRef()
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url, { shallow }) => {
-      setShowMobileMenu(false)
+      setShow(false)
     }
     const logEvent = url => {
       if (process.env.NODE_ENV === 'production') {
@@ -28,7 +28,6 @@ export default function Navbar () {
       router.events.off('routeChangeComplete', logEvent)
     }
   }, [])
-  const [show, setShow] = useState(false)
   return (
     <div className='border-b-2 shadow-md'>
       <div className='mx-auto container relative px-6 xl:px-0'>
@@ -62,7 +61,7 @@ export default function Navbar () {
                     className='focus:outline-none focus:underline focus:text-teal'
                     href='/entreprises'
                   >
-                    professionnels
+                    Professionnels
                   </Link>
                 </li>
                 {/* <li className='hover:text-teal-light cursor-pointer underline font-bold'>
@@ -109,7 +108,7 @@ export default function Navbar () {
                   </li>
                   <li className='flex cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-teal-light flex items-center focus:text-teal focus:outline-none'>
                     <Link href='/entreprises'>
-                      <span className='ml-2 font-bold'>professionnels</span>
+                      <span className='ml-2 font-bold'>Professionnels</span>
                     </Link>
                   </li>
                   {/* <li

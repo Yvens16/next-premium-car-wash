@@ -411,7 +411,7 @@ function entreprises () {
                 Gagnez du temps dans la gestion de votre parc automobile
               </h1>
               <h1 className='text-base lg:text-lg tracking-wide leading-9 mt-2 lg:mt-6 text-white text-center'>
-              Un lavage écologique et une remontée de l'état de vos véhicules en temps réel depuis votre bureau. Alliant propreté et sécurité
+              Un lavage écologique et une remontée de l'état de vos véhicules en temps réel depuis votre bureau, alliant propreté et sécurité
               </h1>
             </div>
             <div className='flex justify-center items-center mb-10 sm:mb-20'>
@@ -482,7 +482,7 @@ function entreprises () {
                     Sans Eau
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                  Nos équipes interviennent sur tous le territoire français pour nettoyer, lustrer et désinfecté les véhicules de vos flottes et maintenir leur état neuf.
+                  Nos équipes interviennent sur tout le territoire français pour nettoyer, lustrer et désinfecter les véhicules de vos flottes et maintenir leur état neuf.
                   </p>
                 </div>
               </div>
@@ -511,7 +511,7 @@ function entreprises () {
                   </h1>
                   <p className='text-base text-white font-normal f-m-m leading-loose py-8'>
                     Grâce à notre application obtenez une vérification visuelle
-                    en temps réelle de vos véhicules depuis l'ordinateur de
+                    en temps réel de vos véhicules depuis l'ordinateur de
                     votre bureau ou depuis votre smartphone.
                   </p>
                 </div>
@@ -541,7 +541,7 @@ function entreprises () {
                     Pour réagir plus vite
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                  Soyez alerté des niveaux des fluides, de la pression et de l'usure des pneus, du voyant moteur, du niveau de l'adblue, les feux, etc... Tous ces points qui vous permettront d'anticiper d'éventuelle panne ou problème de sécurité suite à un mauvais entretien.
+                  Soyez alerté des niveaux des fluides, de la pression et de l'usure des pneus, du voyant moteur, du niveau de l'adblue, des feux, etc... Tous ces points vous permettront d'anticiper d'éventuelle panne ou problème de sécurité suite à un mauvais entretien.
                   </p>
                 </div>
               </div>
@@ -571,7 +571,7 @@ function entreprises () {
                     Vos Factures <br />
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
-                    Vos factures se créeront et seront exportables directement depuis l'application pour un gain de temps pour une gestion local ou nationale.
+                    Vos factures se créeront et seront exportables directement depuis l'application pour un gain de temps pour une gestion locale ou nationale.
                   </p>
                 </div>
               </div>
@@ -603,7 +603,7 @@ function entreprises () {
                 </div>
                 <div>
                   <h1 className='font-semibold text-2xl f-m-m pt-10'>
-                    Facile et évolutifs <br />
+                    Facile et évolutif<br />
                   </h1>
                   <p className='text-base font-normal f-m-m leading-loose py-8'>
                   Notre logiciel ne nécessite pas de formation et nous utilisons les remontées des gestionnaires de flotte pour mettre à jour notre logiciel. Mise à jour ne nécessitant aucune intervention de votre part étant un software-as-a-service (saas).
@@ -614,7 +614,7 @@ function entreprises () {
           </div>
           <div className='lg:w-1/2 lg:pl-40 xl:pl-56'>
             <h1 className='lg:text-5xl text-3xl f-m-w text-teal-light font-bold'>
-              Pourquoi, vous devriez nous choisir ?
+              Pourquoi vous devriez nous choisir ?
             </h1>
             <p className='lg:text-base text-sm f-m-m leading-loose mt-3 mb-8'>
             Nous proposons un service simple et efficace de lavage automobile sur site avec un contrôle visuel de sécurité du véhicule.
@@ -640,7 +640,7 @@ Vous aussi, réduisez de 90 % vos aléas sur votre flotte de véhicules.
                 <div className="relative z-10 w-full">
                     <div className="flex flex-col justify-start py-8 lg:px-10 md:px-6 px-4">
                         <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold text-white">Construisons ensemble la dernière appli de gestion de flotte</h1>
-                        <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composée de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagner 1 an d'utilisation gratuite de la licence</p>
+                        <p className="pt-6 pb-10 md:pt-4 md:pb-12 text-base font-medium leading-none text-gray-200">Rejoignez notre communauté composée de contrôleur de gestion et de gestionnaire de flotte. En tant que premiers utilisateurs gagnez 1 an d'utilisation gratuite de la licence.</p>
                         <div className="pb-6 md:pb-4 flex flex-col justify-center items-center md:flex-row md:justify-start gap-6 md:gap-4">
                             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jeandujardin@gmail.com" className="placeholder-gray-300 border rounded-md p-4 h-12 w-80 focus:outline-none " />
                             <button onClick={submit} className="flex items-center justify-center w-80 md:w-28 h-12 bg-pastel rounded-md text-white font-medium text-base focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-opacity-50 hover:bg-teal-light">Devenir bêta testeur</button>

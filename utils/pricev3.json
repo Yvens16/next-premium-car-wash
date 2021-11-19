@@ -1,33 +1,33 @@
 {
-	"citadine": {
-      "inter": 45,
-      "exter": 30,
-      "both": 55,
-      "time": "1h30",
-      "modèle": "Citadine"
-	},
-	"berline": {
-      "inter": 55,
-      "exter": 30,
-      "both": 65,
-      "time": "1h20",
-      "modèle": "Berline"
-	},
-	"routiere": {
-      "inter": 60,
-      "exter": 30,
-      "both": 75,
-      "time": "1h35",
-      "modèle": "Routière"
-	},
-	"suv": {
-      "inter": 65,
-      "exter": 30,
-      "both": 85,
-      "time": "2h",
-      "modèle": "SUV"
-	},
-  "van" : {
+  "citadine": {
+    "inter": 45,
+    "exter": 30,
+    "both": 55,
+    "time": "1h30",
+    "modèle": "Citadine"
+  },
+  "berline": {
+    "inter": 55,
+    "exter": 30,
+    "both": 65,
+    "time": "1h20",
+    "modèle": "Berline"
+  },
+  "routiere": {
+    "inter": 60,
+    "exter": 30,
+    "both": 75,
+    "time": "1h35",
+    "modèle": "Routière"
+  },
+  "suv": {
+    "inter": 65,
+    "exter": 30,
+    "both": 85,
+    "time": "2h",
+    "modèle": "SUV"
+  },
+  "van": {
     "inter": 70,
     "exter": 40,
     "both": 95,
@@ -35,10 +35,10 @@
     "modèle": "Van"
   },
   "familiale": {
-		"inter": 85,
-		"exter": 40,
-		"both": 110,
+    "inter": 85,
+    "exter": 40,
+    "both": 110,
     "time": "3h00",
     "modèle": "Familiale"
-	}
+  }
 }
